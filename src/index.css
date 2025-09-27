@@ -2,126 +2,159 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Clearly Brand Design System - All colors, gradients, fonts, etc defined here. 
+/* Neon Graffiti Design System - Vibrant street art vibes! 
 All colors MUST be HSL. */
 
 @layer base {
   :root {
-    /* Splash Theme - Vibrant Colors on Black */
-    --background: 0 0% 8%;               /* Pure black background */
+    /* Neon Graffiti Theme - Vibrant Street Art Vibes */
+    --background: 0 0% 5%;               /* Deep black background */
     --foreground: 0 0% 98%;              /* Pure white text */
     
-    --card: 0 0% 12%;                    /* Dark card surface */
+    --card: 0 0% 8%;                     /* Very dark card surface */
     --card-foreground: 0 0% 98%;
     
-    --popover: 0 0% 12%;
+    --popover: 0 0% 8%;
     --popover-foreground: 0 0% 98%;
     
-    --primary: 195 100% 50%;             /* Vibrant cyan blue #00BFFF */
-    --primary-foreground: 0 0% 8%;
+    --primary: 330 100% 54%;             /* Hot pink #FF1493 */
+    --primary-foreground: 0 0% 98%;
     
-    --secondary: 0 0% 18%;               /* Darker card surface */
-    --secondary-foreground: 0 0% 90%;
+    --secondary: 0 0% 12%;               /* Dark surface */
+    --secondary-foreground: 0 0% 98%;
     
-    --muted: 0 0% 18%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
     
-    --accent: 120 100% 50%;              /* Vibrant green #00FF00 */
+    --accent: 120 100% 50%;              /* Electric lime #00FF00 */
     --accent-foreground: 0 0% 8%;
     
-    --destructive: 0 100% 50%;           /* Vibrant red #FF0000 */
+    --destructive: 9 100% 64%;           /* Bright red-orange #FF4500 */
     --destructive-foreground: 0 0% 98%;
     
     --border: 0 0% 20%;
-    --input: 0 0% 15%;
-    --ring: 195 100% 50%;
+    --input: 0 0% 10%;
+    --ring: 330 100% 54%;
     
-    --radius: 12px;
+    --radius: 16px;                      /* Slightly more rounded for street style */
     
-    /* Vibrant splash colors */
-    --splash-blue: 195 100% 50%;         /* Cyan blue */
-    --splash-green: 120 100% 50%;        /* Lime green */
-    --splash-yellow: 60 100% 50%;        /* Bright yellow */
-    --splash-red: 0 100% 50%;            /* Bright red */
-    --splash-purple: 270 100% 50%;       /* Electric purple */
-    --splash-pink: 330 100% 70%;         /* Hot pink */
+    /* Neon Graffiti Colors */
+    --neon-pink: 330 100% 54%;           /* Hot pink #FF1493 */
+    --neon-blue: 195 100% 50%;           /* Electric blue #00BFFF */
+    --neon-green: 120 100% 50%;          /* Lime green #00FF00 */
+    --neon-yellow: 60 100% 50%;          /* Bright yellow #FFFF00 */
+    --neon-orange: 16 100% 50%;          /* Bright orange #FF4500 */
+    --neon-purple: 271 81% 56%;          /* Electric purple #8A2BE2 */
+    --neon-cyan: 180 100% 50%;           /* Cyan #00FFFF */
     
-    /* Splash Theme Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(0 0% 5%));
-    --gradient-card: linear-gradient(180deg, hsl(var(--card)), hsl(0 0% 15%));
-    --gradient-splash: linear-gradient(135deg, 
-      hsl(var(--splash-blue)), 
-      hsl(var(--splash-green)), 
-      hsl(var(--splash-yellow)), 
-      hsl(var(--splash-red))
+    /* Graffiti Gradients */
+    --gradient-hero: linear-gradient(135deg, 
+      hsl(var(--background)), 
+      hsl(0 0% 8%), 
+      hsl(330 100% 10%)
     );
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--splash-green)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--splash-yellow)));
+    --gradient-card: linear-gradient(145deg, 
+      hsl(var(--card)), 
+      hsl(0 0% 12%), 
+      hsl(195 50% 8%)
+    );
+    --gradient-neon: linear-gradient(45deg,
+      hsl(var(--neon-pink)),
+      hsl(var(--neon-blue)),
+      hsl(var(--neon-green)),
+      hsl(var(--neon-yellow)),
+      hsl(var(--neon-orange))
+    );
+    --gradient-primary: linear-gradient(135deg, 
+      hsl(var(--neon-pink)), 
+      hsl(var(--neon-purple))
+    );
+    --gradient-accent: linear-gradient(135deg, 
+      hsl(var(--neon-green)), 
+      hsl(var(--neon-cyan))
+    );
     
-    /* Enhanced effects for splash theme */
-    --shadow-soft: 0 4px 24px -8px hsl(0 0% 0% / 0.5);
-    --shadow-card: 0 8px 32px -12px hsl(0 0% 0% / 0.6);
-    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.4);
-    --shadow-splash: 0 0 60px hsl(var(--splash-blue) / 0.3);
+    /* Neon Glow Effects */
+    --shadow-soft: 0 4px 24px -8px hsl(0 0% 0% / 0.6);
+    --shadow-card: 0 8px 32px -12px hsl(0 0% 0% / 0.7);
+    --shadow-neon-pink: 0 0 20px hsl(var(--neon-pink) / 0.5), 
+                        0 0 40px hsl(var(--neon-pink) / 0.3), 
+                        0 0 60px hsl(var(--neon-pink) / 0.1);
+    --shadow-neon-blue: 0 0 20px hsl(var(--neon-blue) / 0.5), 
+                        0 0 40px hsl(var(--neon-blue) / 0.3);
+    --shadow-neon-green: 0 0 20px hsl(var(--neon-green) / 0.5), 
+                         0 0 40px hsl(var(--neon-green) / 0.3);
+    --shadow-neon-yellow: 0 0 20px hsl(var(--neon-yellow) / 0.5), 
+                          0 0 40px hsl(var(--neon-yellow) / 0.3);
+    
+    /* Graffiti Text Effects */
+    --text-shadow-neon: 0 0 5px currentColor, 
+                        0 0 10px currentColor, 
+                        0 0 15px currentColor;
+    --text-shadow-outline: 2px 2px 0px hsl(0 0% 0%), 
+                           -2px -2px 0px hsl(0 0% 0%), 
+                           2px -2px 0px hsl(0 0% 0%), 
+                           -2px 2px 0px hsl(0 0% 0%);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-neon: all 0.3s ease-in-out;
     
     /* Sidebar */
-    --sidebar-background: 0 0% 8%;
+    --sidebar-background: 0 0% 5%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 195 100% 50%;
-    --sidebar-primary-foreground: 0 0% 8%;
-    --sidebar-accent: 0 0% 18%;
-    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-primary: 330 100% 54%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 195 100% 50%;
+    --sidebar-ring: 330 100% 54%;
   }
 
   .dark {
-    /* Light mode variant */
-    --background: 0 0% 98%;
-    --foreground: 0 0% 8%;
+    /* Light mode variant (inverted) */
+    --background: 0 0% 95%;
+    --foreground: 0 0% 10%;
     
-    --card: 0 0% 95%;
-    --card-foreground: 0 0% 8%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 10%;
     
-    --popover: 0 0% 95%;
-    --popover-foreground: 0 0% 8%;
+    --popover: 0 0% 98%;
+    --popover-foreground: 0 0% 10%;
     
-    --primary: 195 100% 45%;
+    --primary: 330 100% 45%;
     --primary-foreground: 0 0% 98%;
     
-    --secondary: 0 0% 92%;
-    --secondary-foreground: 0 0% 8%;
+    --secondary: 0 0% 90%;
+    --secondary-foreground: 0 0% 10%;
     
-    --muted: 0 0% 92%;
+    --muted: 0 0% 90%;
     --muted-foreground: 0 0% 40%;
     
-    --accent: 120 100% 45%;
+    --accent: 120 100% 40%;
     --accent-foreground: 0 0% 98%;
     
-    --destructive: 0 100% 50%;
+    --destructive: 9 100% 50%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 0 0% 88%;
+    --border: 0 0% 85%;
     --input: 0 0% 95%;
-    --ring: 195 100% 45%;
+    --ring: 330 100% 45%;
     
-    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(0 0% 96%));
-    --gradient-card: linear-gradient(180deg, hsl(var(--card)), hsl(0 0% 93%));
-    --shadow-soft: 0 4px 24px -8px hsl(var(--foreground) / 0.08);
-    --shadow-card: 0 8px 32px -12px hsl(var(--foreground) / 0.1);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(0 0% 92%));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(0 0% 95%));
+    --shadow-soft: 0 4px 24px -8px hsl(var(--foreground) / 0.1);
+    --shadow-card: 0 8px 32px -12px hsl(var(--foreground) / 0.15);
     
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 0 0% 8%;
-    --sidebar-primary: 195 100% 45%;
+    --sidebar-background: 0 0% 95%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 330 100% 45%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 0 0% 92%;
-    --sidebar-accent-foreground: 0 0% 8%;
-    --sidebar-border: 0 0% 88%;
-    --sidebar-ring: 195 100% 45%;
+    --sidebar-accent: 0 0% 90%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 85%;
+    --sidebar-ring: 330 100% 45%;
   }
 }
 
@@ -135,19 +168,30 @@ All colors MUST be HSL. */
     font-family: 'Inter', sans-serif;
   }
   
-  /* Clearly Typography Classes */
+  /* Neon Graffiti Typography Classes */
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
-    @apply font-medium tracking-tight;
-  }
-  
-  .text-hero {
     font-family: 'Space Grotesk', sans-serif;
     @apply font-bold tracking-tight;
   }
   
+  .text-hero {
+    font-family: 'Space Grotesk', sans-serif;
+    @apply font-black tracking-tight;
+    text-shadow: var(--text-shadow-neon);
+  }
+  
   .text-brand {
     font-family: 'Space Grotesk', sans-serif;
-    @apply font-semibold;
+    @apply font-bold;
+    text-shadow: var(--text-shadow-outline);
+  }
+  
+  .text-neon {
+    text-shadow: var(--text-shadow-neon);
+  }
+  
+  .text-graffiti {
+    text-shadow: var(--text-shadow-outline);
+    @apply font-black uppercase tracking-wider;
   }
 }

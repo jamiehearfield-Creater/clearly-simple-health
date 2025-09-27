@@ -72,26 +72,26 @@ export function ProductCard({
   
   return (
     <Link to={`/product/${id}`} className={cn(
-      "group relative bg-card border border-border/50 rounded-xl overflow-hidden hover:shadow-card transition-all duration-300 hover:-translate-y-1 block",
+      "group relative bg-gradient-card border-2 border-neon-blue/30 rounded-xl overflow-hidden hover:border-neon-pink hover:shadow-neon-pink transition-all duration-300 hover:-translate-y-2 hover:scale-105 block",
       className
     )}>
       {/* Product Image */}
-      <div className="aspect-square bg-gradient-card p-6 overflow-hidden">
+      <div className="aspect-square bg-gradient-card p-6 overflow-hidden relative">
         <img
           src={image}
           alt={name}
-          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
         />
         
         {/* Tags & Badges */}
         <div className="absolute top-3 left-3 flex flex-col gap-2">
           {lowStock && (
-            <Badge variant="destructive" className="text-xs">
+            <Badge variant="destructive" className="text-xs shadow-neon-yellow">
               Low Stock
             </Badge>
           )}
           {comparePrice && (
-            <Badge className="bg-accent text-accent-foreground text-xs">
+            <Badge className="bg-neon-green text-background text-xs shadow-neon-green">
               Save £{(comparePrice - price).toFixed(2)}
             </Badge>
           )}
@@ -163,7 +163,7 @@ export function ProductCard({
         {/* Add to Cart */}
         <div className="space-y-2">
           <Button 
-            className="w-full" 
+            className="w-full shadow-neon-pink" 
             size="lg"
             onClick={handleAddToCart}
           >
@@ -172,7 +172,7 @@ export function ProductCard({
           </Button>
           <Button 
             variant="outline" 
-            className="w-full" 
+            className="w-full border-neon-blue text-neon-blue hover:shadow-neon-blue" 
             size="sm"
             onClick={handleSubscribe}
           >

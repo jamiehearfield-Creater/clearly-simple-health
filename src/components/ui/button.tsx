@@ -9,13 +9,13 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        // Clearly Brand Variants
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-glow hover:-translate-y-0.5",
-        accent: "bg-accent text-accent-foreground hover:bg-accent/90 hover:shadow-glow hover:-translate-y-0.5",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 border border-border/50",
-        outline: "border border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground",
-        ghost: "text-foreground hover:bg-secondary hover:text-foreground",
-        link: "text-primary underline-offset-4 hover:underline p-0 h-auto",
+        // Clearly Brand Variants - Enhanced for Neon Graffiti
+        default: "bg-gradient-primary text-primary-foreground hover:shadow-neon-pink hover:-translate-y-1 font-bold tracking-wide transition-all duration-300",
+        accent: "bg-gradient-accent text-accent-foreground hover:shadow-neon-green hover:-translate-y-1 font-bold tracking-wide transition-all duration-300",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 border border-neon-blue/50 hover:border-neon-blue hover:shadow-neon-blue transition-all duration-300",
+        outline: "border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground hover:shadow-neon-pink font-semibold transition-all duration-300",
+        ghost: "text-foreground hover:bg-secondary hover:text-neon-pink transition-all duration-300",
+        link: "text-primary underline-offset-4 hover:underline p-0 h-auto hover:text-neon-pink transition-colors duration-300",
         // Legacy variants for compatibility
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
       },

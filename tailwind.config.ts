@@ -57,13 +57,14 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Splash Theme Colors
-        "splash-blue": "hsl(var(--splash-blue))",
-        "splash-green": "hsl(var(--splash-green))",
-        "splash-yellow": "hsl(var(--splash-yellow))",
-        "splash-red": "hsl(var(--splash-red))",
-        "splash-purple": "hsl(var(--splash-purple))",
-        "splash-pink": "hsl(var(--splash-pink))",
+        // Neon Graffiti Colors
+        "neon-pink": "hsl(var(--neon-pink))",
+        "neon-blue": "hsl(var(--neon-blue))",
+        "neon-green": "hsl(var(--neon-green))",
+        "neon-yellow": "hsl(var(--neon-yellow))",
+        "neon-orange": "hsl(var(--neon-orange))",
+        "neon-purple": "hsl(var(--neon-purple))",
+        "neon-cyan": "hsl(var(--neon-cyan))",
       },
       fontFamily: {
         'space-grotesk': ['Space Grotesk', 'sans-serif'],
@@ -74,13 +75,19 @@ export default {
         'gradient-card': 'var(--gradient-card)',
         'gradient-primary': 'var(--gradient-primary)',
         'gradient-accent': 'var(--gradient-accent)',
-        'gradient-splash': 'var(--gradient-splash)',
+        'gradient-neon': 'var(--gradient-neon)',
       },
       boxShadow: {
         'soft': 'var(--shadow-soft)',
         'card': 'var(--shadow-card)',
-        'glow': 'var(--shadow-glow)',
-        'splash': 'var(--shadow-splash)',
+        'neon-pink': 'var(--shadow-neon-pink)',
+        'neon-blue': 'var(--shadow-neon-blue)',
+        'neon-green': 'var(--shadow-neon-green)',
+        'neon-yellow': 'var(--shadow-neon-yellow)',
+      },
+      textShadow: {
+        'neon': 'var(--text-shadow-neon)',
+        'outline': 'var(--text-shadow-outline)',
       },
       transitionTimingFunction: {
         'smooth': 'var(--transition-smooth)',
@@ -115,5 +122,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("tailwindcss-textshadow")],
 } satisfies Config;

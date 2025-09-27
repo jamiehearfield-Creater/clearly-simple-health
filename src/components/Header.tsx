@@ -26,7 +26,7 @@ export function Header({ className }: HeaderProps) {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="/" className="text-hero text-2xl text-foreground">
+            <a href="/" className="text-hero text-2xl text-neon-cyan">
               Clearly
             </a>
           </div>

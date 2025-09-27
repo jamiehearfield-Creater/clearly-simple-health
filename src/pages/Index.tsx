@@ -98,12 +98,12 @@ const Index = () => {
             {/* Hero Content */}
             <div className="space-y-8">
               <div className="space-y-4">
-                <Badge className="bg-primary/10 text-primary">
+                <Badge className="bg-gradient-primary text-primary-foreground shadow-neon-pink">
                   Breaking the stigma
                 </Badge>
-                <h1 className="text-hero text-5xl sm:text-6xl lg:text-7xl text-foreground">
+                <h1 className="text-hero text-5xl sm:text-6xl lg:text-7xl text-neon-pink">
                   Supplements made{' '}
-                  <span className="text-primary">simple</span>
+                  <span className="text-neon-green text-neon">simple</span>
                 </h1>
                 <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
                   For everyday health and wellbeing. Not just for gym-goers. 
@@ -170,9 +170,9 @@ const Index = () => {
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-12">
-            <h2 className="text-4xl font-bold text-foreground">
-              Start your wellness journey
-            </h2>
+              <h2 className="text-4xl font-bold text-neon-pink text-neon mb-2">
+                Start your wellness journey
+              </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Our most popular supplements, trusted by thousands of everyday people
             </p>
@@ -196,30 +196,30 @@ const Index = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-20 bg-gradient-card">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center space-y-8">
-          <h2 className="text-4xl font-bold text-foreground">
-            Why we exist
-          </h2>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            We believe supplements shouldn't be intimidating or exclusive. 
-            They should be simple, accessible, and designed for everyone who wants to feel healthier. 
-            That's why we create clean, effective products that fit seamlessly into your everyday routine.
-          </p>
-          <Button size="lg" asChild>
-            <Link to="/about">
-              Our Story
-            </Link>
-          </Button>
-        </div>
-      </section>
+        <section className="py-20 bg-gradient-neon">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center space-y-8">
+            <h2 className="text-4xl font-bold text-foreground text-neon">
+              Why we exist
+            </h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              We believe supplements shouldn't be intimidating or exclusive. 
+              They should be simple, accessible, and designed for everyone who wants to feel healthier. 
+              That's why we create clean, effective products that fit seamlessly into your everyday routine.
+            </p>
+            <Button size="lg" className="shadow-neon-blue" asChild>
+              <Link to="/about">
+                Our Story
+              </Link>
+            </Button>
+          </div>
+        </section>
 
       {/* Footer */}
       <footer className="bg-secondary/50 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-4">
-              <h3 className="text-brand text-xl text-foreground">Clearly</h3>
+              <h3 className="text-brand text-xl text-neon-yellow">Clearly</h3>
               <p className="text-sm text-muted-foreground">
                 Supplements made simple, for everyday health and wellbeing.
               </p>
