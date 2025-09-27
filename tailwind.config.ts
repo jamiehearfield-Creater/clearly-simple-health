@@ -57,9 +57,9 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Clearly Brand Colors - Dark & Orange Theme
-        "vivid-orange": "hsl(var(--vivid-orange))",
-        "golden-orange": "hsl(var(--golden-orange))",
+        // Clearly Brand Colors - Dark & Deep Blue Theme
+        "deep-blue": "hsl(var(--deep-blue))",
+        "light-blue": "hsl(var(--light-blue))",
       },
       fontFamily: {
         'space-grotesk': ['Space Grotesk', 'sans-serif'],
