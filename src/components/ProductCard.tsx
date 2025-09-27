@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Star } from 'lucide-react';
+import { Star, ShoppingCart } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useCart } from '@/contexts/CartContext';
 
 interface ProductCardProps {
   id: string;
@@ -34,10 +36,43 @@ export function ProductCard({
   className
 }: ProductCardProps) {
   const subscribePrice = price * (1 - subscribeDiscount / 100);
+  const { addItem } = useCart();
+
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    addItem({
+      id,
+      name,
+      subtitle,
+      price,
+      subscribePrice,
+      subscribeDiscount,
+      image,
+      isSubscription: false
+    });
+  };
+
+  const handleSubscribe = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    addItem({
+      id,
+      name,
+      subtitle,
+      price,
+      subscribePrice,
+      subscribeDiscount,
+      image,
+      isSubscription: true
+    });
+  };
   
   return (
-    <div className={cn(
-      "group relative bg-card border border-border/50 rounded-xl overflow-hidden hover:shadow-card transition-all duration-300 hover:-translate-y-1",
+    <Link to={`/product/${id}`} className={cn(
+      "group relative bg-card border border-border/50 rounded-xl overflow-hidden hover:shadow-card transition-all duration-300 hover:-translate-y-1 block",
       className
     )}>
       {/* Product Image */}
@@ -127,14 +162,24 @@ export function ProductCard({
 
         {/* Add to Cart */}
         <div className="space-y-2">
-          <Button className="w-full" size="lg">
+          <Button 
+            className="w-full" 
+            size="lg"
+            onClick={handleAddToCart}
+          >
+            <ShoppingCart className="mr-2 h-4 w-4" />
             Add to Cart
           </Button>
-          <Button variant="outline" className="w-full" size="sm">
+          <Button 
+            variant="outline" 
+            className="w-full" 
+            size="sm"
+            onClick={handleSubscribe}
+          >
             Subscribe & Save {subscribeDiscount}%
           </Button>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
