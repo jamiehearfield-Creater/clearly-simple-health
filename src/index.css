@@ -17,7 +17,7 @@ All colors MUST be HSL. */
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 98%;
     
-    --primary: 330 100% 54%;             /* Hot pink #FF1493 */
+    --primary: 195 100% 50%;             /* Electric blue #00BFFF */
     --primary-foreground: 0 0% 98%;
     
     --secondary: 0 0% 12%;               /* Dark surface */
@@ -26,7 +26,7 @@ All colors MUST be HSL. */
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 70%;
     
-    --accent: 120 100% 50%;              /* Electric lime #00FF00 */
+    --accent: 120 100% 45%;              /* Balanced lime green */
     --accent-foreground: 0 0% 8%;
     
     --destructive: 9 100% 64%;           /* Bright red-orange #FF4500 */
@@ -34,14 +34,14 @@ All colors MUST be HSL. */
     
     --border: 0 0% 20%;
     --input: 0 0% 10%;
-    --ring: 330 100% 54%;
+    --ring: 195 100% 50%;
     
     --radius: 16px;                      /* Slightly more rounded for street style */
     
     /* Neon Graffiti Colors */
-    --neon-pink: 330 100% 54%;           /* Hot pink #FF1493 */
+    --neon-pink: 320 75% 45%;            /* Toned down pink */
     --neon-blue: 195 100% 50%;           /* Electric blue #00BFFF */
-    --neon-green: 120 100% 50%;          /* Lime green #00FF00 */
+    --neon-green: 120 100% 45%;          /* Balanced lime green */
     --neon-yellow: 60 100% 50%;          /* Bright yellow #FFFF00 */
     --neon-orange: 16 100% 50%;          /* Bright orange #FF4500 */
     --neon-purple: 271 81% 56%;          /* Electric purple #8A2BE2 */
@@ -51,27 +51,27 @@ All colors MUST be HSL. */
     --gradient-hero: linear-gradient(135deg, 
       hsl(var(--background)), 
       hsl(0 0% 8%), 
-      hsl(330 100% 10%)
+      hsl(195 50% 10%)
     );
     --gradient-card: linear-gradient(145deg, 
       hsl(var(--card)), 
       hsl(0 0% 12%), 
-      hsl(195 50% 8%)
+      hsl(120 50% 8%)
     );
     --gradient-neon: linear-gradient(45deg,
-      hsl(var(--neon-pink)),
       hsl(var(--neon-blue)),
       hsl(var(--neon-green)),
-      hsl(var(--neon-yellow)),
-      hsl(var(--neon-orange))
+      hsl(var(--neon-cyan)),
+      hsl(var(--neon-pink)),
+      hsl(var(--neon-yellow))
     );
     --gradient-primary: linear-gradient(135deg, 
-      hsl(var(--neon-pink)), 
-      hsl(var(--neon-purple))
+      hsl(var(--neon-blue)), 
+      hsl(var(--neon-cyan))
     );
     --gradient-accent: linear-gradient(135deg, 
       hsl(var(--neon-green)), 
-      hsl(var(--neon-cyan))
+      hsl(var(--neon-blue))
     );
     
     /* Neon Glow Effects */
@@ -104,12 +104,12 @@ All colors MUST be HSL. */
     /* Sidebar */
     --sidebar-background: 0 0% 5%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 330 100% 54%;
+    --sidebar-primary: 195 100% 50%;
     --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 0 0% 12%;
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 330 100% 54%;
+    --sidebar-ring: 195 100% 50%;
   }
 
   .dark {
