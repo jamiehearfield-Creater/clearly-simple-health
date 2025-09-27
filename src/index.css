@@ -7,111 +7,121 @@ All colors MUST be HSL. */
 
 @layer base {
   :root {
-    /* Clearly Brand Colors - Dark & Deep Blue Theme */
-    --background: 210 11% 15%;           /* Dark charcoal background */
-    --foreground: 0 0% 98%;              /* Nearly white text */
+    /* Splash Theme - Vibrant Colors on Black */
+    --background: 0 0% 8%;               /* Pure black background */
+    --foreground: 0 0% 98%;              /* Pure white text */
     
-    --card: 210 11% 18%;                 /* Slightly lighter card surface */
+    --card: 0 0% 12%;                    /* Dark card surface */
     --card-foreground: 0 0% 98%;
     
-    --popover: 210 11% 18%;
+    --popover: 0 0% 12%;
     --popover-foreground: 0 0% 98%;
     
-    --primary: 220 91% 55%;              /* Deep blue #1E5EFF - main CTAs */
-    --primary-foreground: 0 0% 98%;
+    --primary: 195 100% 50%;             /* Vibrant cyan blue #00BFFF */
+    --primary-foreground: 0 0% 8%;
     
-    --secondary: 210 11% 22%;            /* Lighter card surface */
+    --secondary: 0 0% 18%;               /* Darker card surface */
     --secondary-foreground: 0 0% 90%;
     
-    --muted: 210 11% 22%;
-    --muted-foreground: 210 4% 65%;      /* Muted text */
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 65%;
     
-    --accent: 210 100% 65%;              /* Lighter blue accent #3B82FF */
-    --accent-foreground: 210 11% 15%;
+    --accent: 120 100% 50%;              /* Vibrant green #00FF00 */
+    --accent-foreground: 0 0% 8%;
     
-    --destructive: 355 93% 67%;          /* Alert Red #FF5A67 */
+    --destructive: 0 100% 50%;           /* Vibrant red #FF0000 */
     --destructive-foreground: 0 0% 98%;
     
-    --border: 210 11% 25%;
-    --input: 210 11% 22%;
-    --ring: 220 91% 55%;                 /* Deep blue focus ring */
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 195 100% 50%;
     
-    --radius: 12px;                      /* Softer, more modern radius */
+    --radius: 12px;
     
-    /* Clearly Brand Gradients - Dark Theme */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(210 11% 12%));
-    --gradient-card: linear-gradient(180deg, hsl(var(--card)), hsl(210 11% 20%));
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(220 85% 45%));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(210 95% 55%));
+    /* Vibrant splash colors */
+    --splash-blue: 195 100% 50%;         /* Cyan blue */
+    --splash-green: 120 100% 50%;        /* Lime green */
+    --splash-yellow: 60 100% 50%;        /* Bright yellow */
+    --splash-red: 0 100% 50%;            /* Bright red */
+    --splash-purple: 270 100% 50%;       /* Electric purple */
+    --splash-pink: 330 100% 70%;         /* Hot pink */
     
-    /* Clearly Brand Effects - Enhanced for dark theme */
-    --shadow-soft: 0 4px 24px -8px hsl(0 0% 0% / 0.3);
-    --shadow-card: 0 8px 32px -12px hsl(0 0% 0% / 0.4);
-    --shadow-glow: 0 0 32px hsl(var(--primary) / 0.25);
+    /* Splash Theme Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(0 0% 5%));
+    --gradient-card: linear-gradient(180deg, hsl(var(--card)), hsl(0 0% 15%));
+    --gradient-splash: linear-gradient(135deg, 
+      hsl(var(--splash-blue)), 
+      hsl(var(--splash-green)), 
+      hsl(var(--splash-yellow)), 
+      hsl(var(--splash-red))
+    );
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--splash-green)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--splash-yellow)));
+    
+    /* Enhanced effects for splash theme */
+    --shadow-soft: 0 4px 24px -8px hsl(0 0% 0% / 0.5);
+    --shadow-card: 0 8px 32px -12px hsl(0 0% 0% / 0.6);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.4);
+    --shadow-splash: 0 0 60px hsl(var(--splash-blue) / 0.3);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     
-    /* Additional blue variations */
-    --deep-blue: 220 91% 55%;            /* Primary deep blue */
-    --light-blue: 210 100% 65%;          /* Accent light blue */
-    
     /* Sidebar */
-    --sidebar-background: 210 11% 15%;
+    --sidebar-background: 0 0% 8%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 220 91% 55%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 210 11% 22%;
+    --sidebar-primary: 195 100% 50%;
+    --sidebar-primary-foreground: 0 0% 8%;
+    --sidebar-accent: 0 0% 18%;
     --sidebar-accent-foreground: 0 0% 90%;
-    --sidebar-border: 210 11% 25%;
-    --sidebar-ring: 220 91% 55%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 195 100% 50%;
   }
 
   .dark {
-    /* Light mode (inverted for this dark-first theme) */
+    /* Light mode variant */
     --background: 0 0% 98%;
-    --foreground: 210 11% 15%;
+    --foreground: 0 0% 8%;
     
     --card: 0 0% 95%;
-    --card-foreground: 210 11% 15%;
+    --card-foreground: 0 0% 8%;
     
     --popover: 0 0% 95%;
-    --popover-foreground: 210 11% 15%;
+    --popover-foreground: 0 0% 8%;
     
-    --primary: 220 91% 55%;
+    --primary: 195 100% 45%;
     --primary-foreground: 0 0% 98%;
     
     --secondary: 0 0% 92%;
-    --secondary-foreground: 210 11% 15%;
+    --secondary-foreground: 0 0% 8%;
     
     --muted: 0 0% 92%;
-    --muted-foreground: 210 4% 40%;
+    --muted-foreground: 0 0% 40%;
     
-    --accent: 210 100% 65%;
+    --accent: 120 100% 45%;
     --accent-foreground: 0 0% 98%;
     
-    --destructive: 355 93% 67%;
+    --destructive: 0 100% 50%;
     --destructive-foreground: 0 0% 98%;
     
     --border: 0 0% 88%;
     --input: 0 0% 95%;
-    --ring: 220 91% 55%;
+    --ring: 195 100% 45%;
     
-    /* Light mode shadows and gradients */
     --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(0 0% 96%));
     --gradient-card: linear-gradient(180deg, hsl(var(--card)), hsl(0 0% 93%));
     --shadow-soft: 0 4px 24px -8px hsl(var(--foreground) / 0.08);
     --shadow-card: 0 8px 32px -12px hsl(var(--foreground) / 0.1);
     
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 210 11% 15%;
-    --sidebar-primary: 220 91% 55%;
+    --sidebar-foreground: 0 0% 8%;
+    --sidebar-primary: 195 100% 45%;
     --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 0 0% 92%;
-    --sidebar-accent-foreground: 210 11% 15%;
+    --sidebar-accent-foreground: 0 0% 8%;
     --sidebar-border: 0 0% 88%;
-    --sidebar-ring: 220 91% 55%;
+    --sidebar-ring: 195 100% 45%;
   }
 }
 

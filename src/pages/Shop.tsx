@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Header } from '@/components/Header';
 import { ProductCard } from '@/components/ProductCard';
 import { Button } from '@/components/ui/button';
@@ -89,9 +90,18 @@ const goals = [
 ];
 
 const Shop = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedGoal, setSelectedGoal] = useState('all');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchQuery, setSearchQuery] = useState(searchParams.get('search') || '');
+  const [selectedGoal, setSelectedGoal] = useState(searchParams.get('goal') || 'all');
   const [sortBy, setSortBy] = useState('featured');
+
+  // Update state when URL parameters change
+  useEffect(() => {
+    const search = searchParams.get('search');
+    const goal = searchParams.get('goal');
+    if (search) setSearchQuery(search);
+    if (goal) setSelectedGoal(goal);
+  }, [searchParams]);
 
   // Synonym mapping for search
   const synonymMap: Record<string, string[]> = {

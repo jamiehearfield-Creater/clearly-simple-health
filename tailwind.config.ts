@@ -57,9 +57,13 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Clearly Brand Colors - Dark & Deep Blue Theme
-        "deep-blue": "hsl(var(--deep-blue))",
-        "light-blue": "hsl(var(--light-blue))",
+        // Splash Theme Colors
+        "splash-blue": "hsl(var(--splash-blue))",
+        "splash-green": "hsl(var(--splash-green))",
+        "splash-yellow": "hsl(var(--splash-yellow))",
+        "splash-red": "hsl(var(--splash-red))",
+        "splash-purple": "hsl(var(--splash-purple))",
+        "splash-pink": "hsl(var(--splash-pink))",
       },
       fontFamily: {
         'space-grotesk': ['Space Grotesk', 'sans-serif'],
@@ -70,11 +74,13 @@ export default {
         'gradient-card': 'var(--gradient-card)',
         'gradient-primary': 'var(--gradient-primary)',
         'gradient-accent': 'var(--gradient-accent)',
+        'gradient-splash': 'var(--gradient-splash)',
       },
       boxShadow: {
         'soft': 'var(--shadow-soft)',
         'card': 'var(--shadow-card)',
         'glow': 'var(--shadow-glow)',
+        'splash': 'var(--shadow-splash)',
       },
       transitionTimingFunction: {
         'smooth': 'var(--transition-smooth)',

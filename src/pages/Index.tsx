@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Header } from '@/components/Header';
@@ -111,12 +112,16 @@ const Index = () => {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="xl" className="group">
-                  Shop Now
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <Button size="xl" className="group" asChild>
+                  <Link to="/shop">
+                    Shop Now
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
                 </Button>
-                <Button variant="outline" size="xl">
-                  Learn More
+                <Button variant="outline" size="xl" asChild>
+                  <Link to="/about">
+                    Learn More
+                  </Link>
                 </Button>
               </div>
               
@@ -180,9 +185,11 @@ const Index = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button size="lg" variant="outline">
-              Shop All Products
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button size="lg" variant="outline" asChild>
+              <Link to="/shop">
+                Shop All Products
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
           </div>
         </div>
@@ -199,8 +206,10 @@ const Index = () => {
             They should be simple, accessible, and designed for everyone who wants to feel healthier. 
             That's why we create clean, effective products that fit seamlessly into your everyday routine.
           </p>
-          <Button size="lg">
-            Our Story
+          <Button size="lg" asChild>
+            <Link to="/about">
+              Our Story
+            </Link>
           </Button>
         </div>
       </section>
