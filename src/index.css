@@ -2,69 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Clean Premium Design System - Calming pastels & neutrals */
+/* Warm Personal Design System - Soft pastels & inviting */
 
 @layer base {
   :root {
-    /* Clean Premium Light Theme */
-    --background: 48 33% 97%;            /* Light warm off-white #FAFAF7 */
-    --foreground: 220 13% 8%;            /* Primary text #15171A */
+    /* Warm Personal Light Theme */
+    --background: 320 50% 98%;           /* Soft blush white #FAF9FB */
+    --foreground: 220 8% 11%;            /* Primary text #1A1C1E */
     
-    --card: 220 13% 96%;                 /* Card surfaces #F3F4F6 */
-    --card-foreground: 220 13% 8%;
+    --card: 210 43% 96%;                 /* Pale pastel blue #F2F6FA */
+    --card-foreground: 220 8% 11%;
     
-    --popover: 220 13% 96%;
-    --popover-foreground: 220 13% 8%;
+    --popover: 210 43% 96%;
+    --popover-foreground: 220 8% 11%;
     
-    --primary: 142 25% 76%;              /* Soft sage #CDE3D1 */
-    --primary-foreground: 220 13% 8%;
+    --primary: 320 67% 91%;              /* Pastel pink #F8D7E8 */
+    --primary-foreground: 220 8% 11%;
     
-    --secondary: 220 13% 96%;            /* Card surface */
-    --secondary-foreground: 220 9% 34%;  /* Secondary text #4B5563 */
+    --secondary: 210 43% 96%;            /* Card surface */
+    --secondary-foreground: 220 8% 37%;  /* Secondary text #5B6067 */
     
-    --muted: 220 13% 91%;
-    --muted-foreground: 220 9% 34%;      /* Secondary text #4B5563 */
+    --muted: 220 15% 93%;
+    --muted-foreground: 220 8% 37%;      /* Secondary text #5B6067 */
     
-    --accent: 210 40% 89%;               /* Powder blue #D9E7F6 */
-    --accent-foreground: 220 13% 8%;
+    --accent: 210 67% 91%;               /* Pastel baby blue #D6E8F8 */
+    --accent-foreground: 220 8% 11%;
     
     --destructive: 0 84% 60%;            /* Error red */
     --destructive-foreground: 0 0% 98%;
     
-    --border: 220 13% 91%;               /* Borders/hairlines #E5E7EB */
+    --border: 220 20% 92%;               /* Borders/hairlines #E9ECF1 */
     --input: 0 0% 100%;                  /* White input backgrounds */
-    --ring: 142 25% 76%;
+    --ring: 320 67% 91%;
     
     --radius: 8px;
     
-    /* Pastel Accent Colors */
-    --sage: 142 25% 76%;                 /* Soft sage #CDE3D1 */
-    --powder-blue: 210 40% 89%;          /* Powder blue #D9E7F6 */
-    --peach: 27 50% 93%;                 /* Peach tint #FBE4D6 */
+    /* Pastel Personal Colors */
+    --pastel-pink: 320 67% 91%;          /* Pastel pink #F8D7E8 */
+    --pastel-blue: 210 67% 91%;          /* Pastel baby blue #D6E8F8 */
+    --lavender: 260 43% 93%;             /* Lavender hint #EADFF6 */
     --success: 142 76% 36%;              /* Success green */
     
-    /* Clean Gradients */
+    /* Warm Personal Gradients */
     --gradient-hero: linear-gradient(135deg, 
-      hsl(var(--background)), 
-      hsl(var(--card))
+      hsl(var(--pastel-pink)), 
+      hsl(var(--pastel-blue))
     );
     --gradient-card: linear-gradient(145deg, 
       hsl(var(--card)), 
       hsl(var(--background))
     );
     --gradient-subtle: linear-gradient(90deg,
-      hsl(var(--sage)),
-      hsl(var(--powder-blue))
+      hsl(var(--pastel-pink)),
+      hsl(var(--pastel-blue))
     );
     --gradient-primary: linear-gradient(135deg, 
-      hsl(var(--primary)), 
-      hsl(var(--accent))
+      hsl(var(--pastel-pink)), 
+      hsl(var(--pastel-blue))
     );
     
-    /* Clean Shadow Effects */
-    --shadow-soft: 0 1px 3px 0 hsl(220 13% 8% / 0.1), 0 1px 2px 0 hsl(220 13% 8% / 0.06);
-    --shadow-card: 0 4px 6px -1px hsl(220 13% 8% / 0.1), 0 2px 4px -1px hsl(220 13% 8% / 0.06);
-    --shadow-lg: 0 10px 15px -3px hsl(220 13% 8% / 0.1), 0 4px 6px -2px hsl(220 13% 8% / 0.05);
+    /* Gentle Personal Shadow Effects */
+    --shadow-soft: 0 2px 4px 0 hsl(320 67% 91% / 0.3), 0 1px 3px 0 hsl(210 67% 91% / 0.2);
+    --shadow-card: 0 4px 8px -2px hsl(320 67% 91% / 0.25), 0 2px 6px -1px hsl(210 67% 91% / 0.15);
+    --shadow-lg: 0 8px 16px -4px hsl(320 67% 91% / 0.2), 0 4px 12px -2px hsl(210 67% 91% / 0.1);
+    --shadow-hover: 0 6px 12px -2px hsl(320 67% 91% / 0.3), 0 3px 8px -1px hsl(210 67% 91% / 0.2);
     
     /* Clean Text Effects */
     --text-shadow-subtle: 0 1px 2px hsl(220 13% 8% / 0.1);

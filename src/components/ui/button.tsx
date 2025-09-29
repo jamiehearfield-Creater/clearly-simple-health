@@ -5,24 +5,24 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground shadow-soft hover:bg-primary/90 font-semibold",
+        default: "bg-gradient-primary text-foreground shadow-soft hover:shadow-hover hover:-translate-y-0.5 font-semibold rounded-xl",
         destructive:
-          "bg-destructive text-destructive-foreground shadow-soft hover:bg-destructive/90",
+          "bg-destructive text-destructive-foreground shadow-soft hover:bg-destructive/90 rounded-xl",
         outline:
-          "border border-border bg-background shadow-soft hover:bg-secondary hover:text-secondary-foreground",
+          "border border-border bg-background shadow-soft hover:bg-secondary hover:text-secondary-foreground rounded-xl",
         secondary:
-          "bg-secondary text-secondary-foreground shadow-soft hover:bg-secondary/80",
-        ghost: "hover:bg-secondary hover:text-secondary-foreground",
+          "bg-secondary text-secondary-foreground shadow-soft hover:bg-secondary/80 rounded-xl",
+        ghost: "hover:bg-secondary hover:text-secondary-foreground rounded-xl",
         link: "text-primary underline-offset-4 hover:underline font-medium",
         
-        // Clean Premium Variants
-        subtle: "bg-sage/20 text-foreground hover:bg-sage/30 transition-gentle",
-        accent: "bg-powder-blue text-foreground hover:bg-powder-blue/80 transition-gentle",
-        minimal: "text-foreground hover:bg-secondary border border-transparent hover:border-border transition-gentle",
+        // Warm Personal Variants
+        subtle: "bg-pastel-pink/30 text-foreground hover:bg-pastel-pink/40 hover:-translate-y-0.5 transition-all duration-300 rounded-xl",
+        accent: "bg-pastel-blue/40 text-foreground hover:bg-pastel-blue/50 hover:-translate-y-0.5 transition-all duration-300 rounded-xl",
+        minimal: "text-foreground hover:bg-secondary border border-transparent hover:border-border transition-all duration-300 rounded-xl",
       },
       size: {
         default: "h-10 px-6 py-2",

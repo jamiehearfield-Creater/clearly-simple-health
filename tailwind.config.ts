@@ -57,10 +57,10 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Clean Pastel Colors
-        "sage": "hsl(var(--sage))",
-        "powder-blue": "hsl(var(--powder-blue))",
-        "peach": "hsl(var(--peach))",
+        // Warm Personal Colors
+        "pastel-pink": "hsl(var(--pastel-pink))",
+        "pastel-blue": "hsl(var(--pastel-blue))",
+        "lavender": "hsl(var(--lavender))",
         "success": "hsl(var(--success))",
       },
       fontFamily: {
@@ -77,6 +77,7 @@ export default {
         'soft': 'var(--shadow-soft)',
         'card': 'var(--shadow-card)',
         'lg': 'var(--shadow-lg)',
+        'hover': 'var(--shadow-hover)',
       },
       textShadow: {
         'subtle': 'var(--text-shadow-subtle)',
