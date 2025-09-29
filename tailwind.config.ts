@@ -57,14 +57,15 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Neon Graffiti Colors
+        // Futuristic Neon Colors
         "neon-pink": "hsl(var(--neon-pink))",
         "neon-blue": "hsl(var(--neon-blue))",
+        "neon-purple": "hsl(var(--neon-purple))",
+        "neon-magenta": "hsl(var(--neon-magenta))",
         "neon-green": "hsl(var(--neon-green))",
+        "neon-cyan": "hsl(var(--neon-cyan))",
         "neon-yellow": "hsl(var(--neon-yellow))",
         "neon-orange": "hsl(var(--neon-orange))",
-        "neon-purple": "hsl(var(--neon-purple))",
-        "neon-cyan": "hsl(var(--neon-cyan))",
       },
       fontFamily: {
         'space-grotesk': ['Space Grotesk', 'sans-serif'],
@@ -82,8 +83,9 @@ export default {
         'card': 'var(--shadow-card)',
         'neon-pink': 'var(--shadow-neon-pink)',
         'neon-blue': 'var(--shadow-neon-blue)',
+        'neon-purple': 'var(--shadow-neon-purple)',
+        'neon-magenta': 'var(--shadow-neon-magenta)',
         'neon-green': 'var(--shadow-neon-green)',
-        'neon-yellow': 'var(--shadow-neon-yellow)',
       },
       textShadow: {
         'neon': 'var(--text-shadow-neon)',

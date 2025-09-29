@@ -9,13 +9,13 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        // Clearly Brand Variants - Enhanced for Neon Graffiti
+        // Futuristic Neon Variants
         default: "bg-gradient-primary text-primary-foreground hover:shadow-neon-blue hover:-translate-y-1 font-bold tracking-wide transition-all duration-300",
-        accent: "bg-gradient-accent text-accent-foreground hover:shadow-neon-green hover:-translate-y-1 font-bold tracking-wide transition-all duration-300",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 border border-neon-blue/50 hover:border-neon-blue hover:shadow-neon-blue transition-all duration-300",
+        accent: "bg-gradient-accent text-accent-foreground hover:shadow-neon-purple hover:-translate-y-1 font-bold tracking-wide transition-all duration-300",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 border border-neon-purple/50 hover:border-neon-purple hover:shadow-neon-purple transition-all duration-300",
         outline: "border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground hover:shadow-neon-blue font-semibold transition-all duration-300",
         ghost: "text-foreground hover:bg-secondary hover:text-neon-blue transition-all duration-300",
-        link: "text-primary underline-offset-4 hover:underline p-0 h-auto hover:text-neon-cyan transition-colors duration-300",
+        link: "text-primary underline-offset-4 hover:underline p-0 h-auto hover:text-neon-magenta transition-colors duration-300",
         // Legacy variants for compatibility
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
       },

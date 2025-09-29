@@ -7,85 +7,84 @@ All colors MUST be HSL. */
 
 @layer base {
   :root {
-    /* Neon Graffiti Theme - Vibrant Street Art Vibes */
-    --background: 0 0% 5%;               /* Deep black background */
-    --foreground: 0 0% 98%;              /* Pure white text */
+    /* Futuristic Neon-on-Dark Theme */
+    --background: 225 18% 6%;            /* Deep charcoal black #0B0C10 */
+    --foreground: 0 0% 100%;             /* Pure white #FFFFFF */
     
-    --card: 0 0% 8%;                     /* Very dark card surface */
-    --card-foreground: 0 0% 98%;
+    --card: 240 19% 15%;                 /* Dark slate #1F1F2E */
+    --card-foreground: 0 0% 100%;
     
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 240 19% 15%;
+    --popover-foreground: 0 0% 100%;
     
-    --primary: 195 100% 50%;             /* Electric blue #00BFFF */
-    --primary-foreground: 0 0% 98%;
+    --primary: 190 100% 62%;             /* Neon blue #3AE0FF */
+    --primary-foreground: 225 18% 6%;
     
-    --secondary: 0 0% 12%;               /* Dark surface */
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 240 19% 15%;            /* Dark slate surface */
+    --secondary-foreground: 240 33% 85%;
     
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 240 19% 18%;
+    --muted-foreground: 240 33% 85%;     /* Soft grey-lilac #CFCFE4 */
     
-    --accent: 120 100% 45%;              /* Balanced lime green */
-    --accent-foreground: 0 0% 8%;
+    --accent: 267 100% 68%;              /* Neon purple #9B5CFF */
+    --accent-foreground: 0 0% 100%;
     
-    --destructive: 9 100% 64%;           /* Bright red-orange #FF4500 */
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 355 100% 68%;         /* Error red #FF5A67 */
+    --destructive-foreground: 0 0% 100%;
     
-    --border: 0 0% 20%;
-    --input: 0 0% 10%;
-    --ring: 195 100% 50%;
+    --border: 240 19% 25%;
+    --input: 240 19% 12%;
+    --ring: 190 100% 62%;
     
-    --radius: 16px;                      /* Slightly more rounded for street style */
+    --radius: 16px;
     
-    /* Neon Graffiti Colors */
-    --neon-pink: 320 75% 45%;            /* Toned down pink */
-    --neon-blue: 195 100% 50%;           /* Electric blue #00BFFF */
-    --neon-green: 120 100% 45%;          /* Balanced lime green */
-    --neon-yellow: 60 100% 50%;          /* Bright yellow #FFFF00 */
-    --neon-orange: 16 100% 50%;          /* Bright orange #FF4500 */
-    --neon-purple: 271 81% 56%;          /* Electric purple #8A2BE2 */
-    --neon-cyan: 180 100% 50%;           /* Cyan #00FFFF */
+    /* Futuristic Neon Colors */
+    --neon-pink: 325 100% 59%;           /* Neon Pink #FF2D95 */
+    --neon-blue: 190 100% 62%;           /* Neon Blue #3AE0FF */
+    --neon-purple: 267 100% 68%;         /* Neon Purple #9B5CFF */
+    --neon-magenta: 296 100% 59%;        /* Neon Magenta #E92EFF */
+    --neon-green: 160 100% 50%;          /* Success Green #00FFB2 */
+    --neon-cyan: 190 100% 62%;           /* Alias for neon-blue */
+    --neon-yellow: 60 100% 50%;          /* Keep for compatibility */
+    --neon-orange: 16 100% 50%;          /* Keep for compatibility */
     
-    /* Graffiti Gradients */
+    /* Futuristic Gradients */
     --gradient-hero: linear-gradient(135deg, 
       hsl(var(--background)), 
-      hsl(0 0% 8%), 
-      hsl(195 50% 10%)
+      hsl(240 19% 12%), 
+      hsl(267 50% 15%)
     );
     --gradient-card: linear-gradient(145deg, 
       hsl(var(--card)), 
-      hsl(0 0% 12%), 
-      hsl(120 50% 8%)
+      hsl(240 19% 18%), 
+      hsl(267 30% 12%)
     );
-    --gradient-neon: linear-gradient(45deg,
-      hsl(var(--neon-blue)),
-      hsl(var(--neon-green)),
-      hsl(var(--neon-cyan)),
+    --gradient-neon: linear-gradient(90deg,
       hsl(var(--neon-pink)),
-      hsl(var(--neon-yellow))
+      hsl(var(--neon-blue))
     );
     --gradient-primary: linear-gradient(135deg, 
       hsl(var(--neon-blue)), 
-      hsl(var(--neon-cyan))
+      hsl(var(--neon-purple))
     );
     --gradient-accent: linear-gradient(135deg, 
-      hsl(var(--neon-green)), 
-      hsl(var(--neon-blue))
+      hsl(var(--neon-purple)), 
+      hsl(var(--neon-magenta))
     );
     
-    /* Neon Glow Effects */
-    --shadow-soft: 0 4px 24px -8px hsl(0 0% 0% / 0.6);
-    --shadow-card: 0 8px 32px -12px hsl(0 0% 0% / 0.7);
-    --shadow-neon-pink: 0 0 20px hsl(var(--neon-pink) / 0.5), 
-                        0 0 40px hsl(var(--neon-pink) / 0.3), 
-                        0 0 60px hsl(var(--neon-pink) / 0.1);
-    --shadow-neon-blue: 0 0 20px hsl(var(--neon-blue) / 0.5), 
-                        0 0 40px hsl(var(--neon-blue) / 0.3);
-    --shadow-neon-green: 0 0 20px hsl(var(--neon-green) / 0.5), 
-                         0 0 40px hsl(var(--neon-green) / 0.3);
-    --shadow-neon-yellow: 0 0 20px hsl(var(--neon-yellow) / 0.5), 
-                          0 0 40px hsl(var(--neon-yellow) / 0.3);
+    /* Futuristic Neon Glow Effects */
+    --shadow-soft: 0 4px 24px -8px hsl(225 18% 6% / 0.8);
+    --shadow-card: 0 8px 32px -12px hsl(225 18% 6% / 0.9);
+    --shadow-neon-pink: 0 0 15px hsl(var(--neon-pink) / 0.4), 
+                        0 0 30px hsl(var(--neon-pink) / 0.2);
+    --shadow-neon-blue: 0 0 15px hsl(var(--neon-blue) / 0.4), 
+                        0 0 30px hsl(var(--neon-blue) / 0.2);
+    --shadow-neon-purple: 0 0 15px hsl(var(--neon-purple) / 0.4), 
+                          0 0 30px hsl(var(--neon-purple) / 0.2);
+    --shadow-neon-magenta: 0 0 15px hsl(var(--neon-magenta) / 0.4), 
+                           0 0 30px hsl(var(--neon-magenta) / 0.2);
+    --shadow-neon-green: 0 0 15px hsl(var(--neon-green) / 0.4), 
+                         0 0 30px hsl(var(--neon-green) / 0.2);
     
     /* Graffiti Text Effects */
     --text-shadow-neon: 0 0 5px currentColor, 
@@ -102,14 +101,14 @@ All colors MUST be HSL. */
     --transition-neon: all 0.3s ease-in-out;
     
     /* Sidebar */
-    --sidebar-background: 0 0% 5%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 195 100% 50%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 0 0% 12%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 195 100% 50%;
+    --sidebar-background: 225 18% 6%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 190 100% 62%;
+    --sidebar-primary-foreground: 225 18% 6%;
+    --sidebar-accent: 240 19% 15%;
+    --sidebar-accent-foreground: 240 33% 85%;
+    --sidebar-border: 240 19% 25%;
+    --sidebar-ring: 190 100% 62%;
   }
 
   .dark {
