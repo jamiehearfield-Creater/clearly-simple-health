@@ -19,7 +19,8 @@ export function Header({ className }: HeaderProps) {
 
   return (
     <header className={cn(
-      "sticky top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-md",
+      "sticky top-0 z-50 w-full border-b border-border/50 backdrop-blur-md",
+      "bg-gradient-to-r from-gray-900/95 to-gray-800/95 shadow-gradient-neon",
       className
     )}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -91,10 +92,6 @@ export function Header({ className }: HeaderProps) {
         )}
       </div>
 
-      {/* Free Shipping Bar */}
-      <div className="bg-primary text-primary-foreground text-center py-2 text-sm font-medium">
-        Free UK shipping on orders over £40 🚚
-      </div>
     </header>
   );
 }

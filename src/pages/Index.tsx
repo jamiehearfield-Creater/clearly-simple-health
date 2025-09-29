@@ -101,9 +101,9 @@ const Index = () => {
                 <Badge className="bg-gradient-primary text-primary-foreground shadow-neon-pink">
                   Breaking the stigma
                 </Badge>
-                <h1 className="text-hero text-5xl sm:text-6xl lg:text-7xl text-neon-pink">
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white">
                   Supplements made{' '}
-                  <span className="text-neon-green text-neon">simple</span>
+                  <span className="text-neon-green" style={{ textShadow: 'var(--shadow-gradient-neon)' }}>simple</span>
                 </h1>
                 <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
                   For everyday health and wellbeing. Not just for gym-goers. 

@@ -86,6 +86,10 @@ All colors MUST be HSL. */
     --shadow-neon-green: 0 0 15px hsl(var(--neon-green) / 0.4), 
                          0 0 30px hsl(var(--neon-green) / 0.2);
     
+    /* Gradient Drop Shadow Effects */
+    --shadow-gradient-neon: 0 4px 20px hsl(var(--neon-pink) / 0.3), 
+                            0 8px 40px hsl(var(--neon-blue) / 0.2);
+    
     /* Graffiti Text Effects */
     --text-shadow-neon: 0 0 5px currentColor, 
                         0 0 10px currentColor, 

@@ -86,6 +86,7 @@ export default {
         'neon-purple': 'var(--shadow-neon-purple)',
         'neon-magenta': 'var(--shadow-neon-magenta)',
         'neon-green': 'var(--shadow-neon-green)',
+        'gradient-neon': 'var(--shadow-gradient-neon)',
       },
       textShadow: {
         'neon': 'var(--text-shadow-neon)',
