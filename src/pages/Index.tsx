@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Card, CardContent } from '@/components/ui/card';
 import { Header } from '@/components/Header';
 import { ProductCard } from '@/components/ProductCard';
-import { ArrowRight, Shield, Truck, RotateCcw, Users } from 'lucide-react';
+import { ArrowRight, Shield, Truck, RotateCcw, Users, Heart, Leaf, Star } from 'lucide-react';
 
 // Import product images
 import creatineCoffeeImg from '@/assets/creatine-coffee.jpg';
@@ -63,26 +64,44 @@ const featuredProducts = [
   },
 ];
 
+const whyClearlyFeatures = [
+  {
+    icon: Heart,
+    title: 'Made for everyday health',
+    description: 'Simple, effective supplements designed for daily wellness, not just fitness goals.',
+  },
+  {
+    icon: Leaf,
+    title: 'Simple routines, real results',
+    description: 'Easy-to-follow regimens that fit seamlessly into your morning routine.',
+  },
+  {
+    icon: Users,
+    title: 'No gym-bro stigma',
+    description: 'Approachable wellness for everyone, regardless of fitness level or lifestyle.',
+  },
+];
+
 const trustFeatures = [
   {
     icon: Shield,
-    title: '30-Day Guarantee',
-    description: 'Not happy? Get your money back.',
+    title: '30-Day Satisfaction Guarantee',
+    description: 'Try risk-free with our money-back promise',
   },
   {
     icon: Truck,
     title: 'Free UK Shipping',
-    description: 'On orders over £40',
+    description: 'Complimentary delivery on orders over £40',
   },
   {
     icon: RotateCcw,
-    title: 'Subscribe & Save',
-    description: '12% off with flexible delivery',
+    title: 'Flexible Subscriptions',
+    description: 'Save 12% with easy pause and cancel options',
   },
   {
-    icon: Users,
-    title: '50k+ Happy Customers',
-    description: 'Join our wellness community',
+    icon: Star,
+    title: '4.8/5 Customer Rating',
+    description: 'Trusted by thousands of happy customers',
   },
 ];
 
@@ -97,13 +116,13 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[600px] py-20">
             {/* Hero Content */}
             <div className="space-y-8">
-              <div className="space-y-4">
-                <Badge className="bg-gradient-primary text-primary-foreground shadow-neon-pink">
+              <div className="space-y-6">
+                <Badge className="bg-sage/20 text-sage border-sage/30 font-medium">
                   Breaking the stigma
                 </Badge>
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white">
+                <h1 className="text-hero text-5xl sm:text-6xl lg:text-7xl text-foreground">
                   Supplements made{' '}
-                  <span className="text-neon-green" style={{ textShadow: 'var(--shadow-gradient-neon)' }}>simple</span>
+                  <span className="text-sage font-bold">simple</span>
                 </h1>
                 <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
                   For everyday health and wellbeing. Not just for gym-goers. 
@@ -114,8 +133,8 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="xl" className="group" asChild>
                   <Link to="/shop">
-                    Shop Now
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    Shop Clearly
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-smooth" />
                   </Link>
                 </Button>
                 <Button variant="outline" size="xl" asChild>
@@ -127,11 +146,11 @@ const Index = () => {
               
               <div className="flex items-center gap-6 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
-                  <Shield className="h-4 w-4 text-primary" />
+                  <Shield className="h-4 w-4 text-sage" />
                   <span>30-day guarantee</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Truck className="h-4 w-4 text-primary" />
+                  <Truck className="h-4 w-4 text-sage" />
                   <span>Free UK shipping</span>
                 </div>
               </div>
@@ -141,7 +160,7 @@ const Index = () => {
             <div className="relative">
               <img
                 src={heroLifestyleImg}
-                alt="Happy customers with Clearly supplements"
+                alt="Clean, minimal supplement lifestyle"
                 className="w-full h-auto rounded-2xl shadow-card"
               />
             </div>
@@ -149,18 +168,29 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Trust Features */}
-      <section className="py-16 bg-card/30">
+      {/* Why Clearly Section */}
+      <section className="py-20 bg-card/50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {trustFeatures.map((feature, index) => (
-              <div key={index} className="text-center space-y-3">
-                <div className="mx-auto w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                  <feature.icon className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="font-semibold text-foreground">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">{feature.description}</p>
-              </div>
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-4xl font-bold text-foreground">
+              Why Clearly?
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              We believe wellness should be simple, accessible, and designed for real life
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {whyClearlyFeatures.map((feature, index) => (
+              <Card key={index} className="border-border/50 bg-background/80 shadow-soft">
+                <CardContent className="p-8 text-center space-y-4">
+                  <div className="mx-auto w-16 h-16 bg-sage/10 rounded-full flex items-center justify-center">
+                    <feature.icon className="h-8 w-8 text-sage" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground">{feature.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
@@ -170,9 +200,9 @@ const Index = () => {
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-12">
-              <h2 className="text-4xl font-bold text-neon-pink text-neon mb-2">
-                Start your wellness journey
-              </h2>
+            <h2 className="text-4xl font-bold text-foreground">
+              Start your wellness journey
+            </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Our most popular supplements, trusted by thousands of everyday people
             </p>
@@ -195,31 +225,83 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Mission Section */}
-        <section className="py-20 bg-gradient-neon">
-          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center space-y-8">
-            <h2 className="text-4xl font-bold text-foreground text-neon">
-              Why we exist
+      {/* Trust Features */}
+      <section className="py-20 bg-card/30">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-3xl font-bold text-foreground">
+              Why customers trust Clearly
             </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              We believe supplements shouldn't be intimidating or exclusive. 
-              They should be simple, accessible, and designed for everyone who wants to feel healthier. 
-              That's why we create clean, effective products that fit seamlessly into your everyday routine.
-            </p>
-            <Button size="lg" className="shadow-neon-blue" asChild>
-              <Link to="/about">
-                Our Story
-              </Link>
-            </Button>
           </div>
-        </section>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {trustFeatures.map((feature, index) => (
+              <div key={index} className="text-center space-y-4">
+                <div className="mx-auto w-14 h-14 bg-powder-blue/20 rounded-full flex items-center justify-center">
+                  <feature.icon className="h-7 w-7 text-powder-blue" />
+                </div>
+                <h3 className="font-semibold text-foreground">{feature.title}</h3>
+                <p className="text-sm text-muted-foreground">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Email Capture */}
+      <section className="py-16">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <Card className="bg-gradient-subtle border-0 shadow-lg">
+            <CardContent className="p-12 text-center space-y-6">
+              <h2 className="text-3xl font-bold text-foreground">
+                Get 10% off your first order
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Join our wellness community and receive exclusive offers, health tips, and early access to new products.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-sage focus:border-transparent"
+                />
+                <Button size="lg" className="whitespace-nowrap">
+                  Get 10% Off
+                </Button>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                No spam, unsubscribe anytime. See our privacy policy.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Mission Section */}
+      <section className="py-20 bg-card/50">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center space-y-8">
+          <h2 className="text-4xl font-bold text-foreground">
+            Our mission
+          </h2>
+          <p className="text-xl text-muted-foreground leading-relaxed">
+            We believe supplements shouldn't be intimidating or exclusive. 
+            They should be simple, accessible, and designed for everyone who wants to feel healthier. 
+            That's why we create clean, effective products that fit seamlessly into your everyday routine.
+          </p>
+          <Button size="lg" variant="outline" asChild>
+            <Link to="/about">
+              Read Our Story
+            </Link>
+          </Button>
+        </div>
+      </section>
 
       {/* Footer */}
-      <footer className="bg-secondary/50 py-16">
+      <footer className="bg-card border-t border-border py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-4">
-              <h3 className="text-brand text-xl text-neon-yellow">Clearly</h3>
+              <h3 className="text-brand text-xl font-bold text-foreground">Clearly</h3>
               <p className="text-sm text-muted-foreground">
                 Supplements made simple, for everyday health and wellbeing.
               </p>
@@ -228,35 +310,45 @@ const Index = () => {
             <div className="space-y-4">
               <h4 className="font-semibold text-foreground">Shop</h4>
               <div className="space-y-2 text-sm text-muted-foreground">
-                <div><a href="#" className="hover:text-foreground transition-colors">All Products</a></div>
-                <div><a href="#" className="hover:text-foreground transition-colors">By Goal</a></div>
-                <div><a href="#" className="hover:text-foreground transition-colors">Bundles</a></div>
-                <div><a href="#" className="hover:text-foreground transition-colors">Subscriptions</a></div>
+                <div><Link to="/shop" className="hover:text-foreground transition-smooth">All Products</Link></div>
+                <div><a href="#" className="hover:text-foreground transition-smooth">By Goal</a></div>
+                <div><a href="#" className="hover:text-foreground transition-smooth">Bundles</a></div>
+                <div><a href="#" className="hover:text-foreground transition-smooth">Subscriptions</a></div>
               </div>
             </div>
             
             <div className="space-y-4">
               <h4 className="font-semibold text-foreground">Support</h4>
               <div className="space-y-2 text-sm text-muted-foreground">
-                <div><a href="#" className="hover:text-foreground transition-colors">Contact Us</a></div>
-                <div><a href="#" className="hover:text-foreground transition-colors">Shipping</a></div>
-                <div><a href="#" className="hover:text-foreground transition-colors">Returns</a></div>
-                <div><a href="#" className="hover:text-foreground transition-colors">FAQ</a></div>
+                <div><Link to="/contact" className="hover:text-foreground transition-smooth">Contact Us</Link></div>
+                <div><a href="#" className="hover:text-foreground transition-smooth">Shipping</a></div>
+                <div><a href="#" className="hover:text-foreground transition-smooth">Returns</a></div>
+                <div><a href="#" className="hover:text-foreground transition-smooth">FAQ</a></div>
               </div>
             </div>
             
             <div className="space-y-4">
               <h4 className="font-semibold text-foreground">Legal</h4>
               <div className="space-y-2 text-sm text-muted-foreground">
-                <div><a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a></div>
-                <div><a href="#" className="hover:text-foreground transition-colors">Terms & Conditions</a></div>
-                <div><a href="#" className="hover:text-foreground transition-colors">Cookie Policy</a></div>
+                <div><a href="#" className="hover:text-foreground transition-smooth">Privacy Policy</a></div>
+                <div><a href="#" className="hover:text-foreground transition-smooth">Terms & Conditions</a></div>
+                <div><a href="#" className="hover:text-foreground transition-smooth">Cookie Policy</a></div>
               </div>
             </div>
           </div>
           
-          <div className="border-t border-border/50 mt-12 pt-8 text-center text-sm text-muted-foreground">
+          <div className="border-t border-border mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground space-y-4 sm:space-y-0">
             <p>&copy; 2024 Clearly Ltd. All rights reserved. VAT No: GB123456789</p>
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2">
+                <Shield className="h-4 w-4 text-sage" />
+                <span>30-day guarantee</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Star className="h-4 w-4 text-sage fill-current" />
+                <span>4.8/5 rating</span>
+              </div>
+            </div>
           </div>
         </div>
       </footer>

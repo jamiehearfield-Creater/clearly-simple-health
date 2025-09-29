@@ -71,115 +71,101 @@ export function ProductCard({
   };
   
   return (
-    <Link to={`/product/${id}`} className={cn(
-      "group relative bg-gradient-card border-2 border-neon-blue/30 rounded-xl overflow-hidden hover:border-neon-pink hover:shadow-neon-pink transition-all duration-300 hover:-translate-y-2 hover:scale-105 block",
-      className
-    )}>
-      {/* Product Image */}
-      <div className="aspect-square bg-gradient-card p-6 overflow-hidden relative">
-        <img
-          src={image}
-          alt={name}
-          className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
-        />
-        
-        {/* Tags & Badges */}
-        <div className="absolute top-3 left-3 flex flex-col gap-2">
+    <div className="bg-background rounded-xl border border-border overflow-hidden shadow-soft hover:shadow-card transition-gentle group">
+      <Link to={`/product/${id}`} className="block">
+        <div className="relative aspect-square overflow-hidden">
+          <img
+            src={image}
+            alt={name}
+            className="w-full h-full object-cover group-hover:scale-105 transition-gentle"
+          />
           {lowStock && (
-            <Badge variant="destructive" className="text-xs shadow-neon-yellow">
+            <Badge className="absolute top-3 left-3 bg-destructive text-destructive-foreground">
               Low Stock
             </Badge>
           )}
-          {comparePrice && (
-            <Badge className="bg-neon-green text-background text-xs shadow-neon-green">
-              Save £{(comparePrice - price).toFixed(2)}
-            </Badge>
-          )}
         </div>
-      </div>
-
-      {/* Product Info */}
-      <div className="p-6 space-y-4">
-        {/* Title & Subtitle */}
-        <div>
-          <h3 className="font-semibold text-lg text-foreground">{name}</h3>
-          <p className="text-sm text-muted-foreground">{subtitle}</p>
-        </div>
-
-        {/* Rating */}
-        <div className="flex items-center gap-2">
-          <div className="flex items-center">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <Star
-                key={i}
-                className={cn(
-                  "h-4 w-4",
-                  i < Math.floor(rating) 
-                    ? "fill-accent text-accent" 
-                    : "text-muted-foreground/30"
-                )}
-              />
-            ))}
-          </div>
-          <span className="text-sm text-muted-foreground">
-            ({reviewCount})
-          </span>
-        </div>
-
-        {/* Tags */}
-        <div className="flex flex-wrap gap-1">
-          {tags.slice(0, 3).map((tag) => (
-            <Badge key={tag} variant="secondary" className="text-xs">
-              {tag}
-            </Badge>
-          ))}
-        </div>
-
-        {/* Pricing */}
-        <div className="space-y-2">
-          <div className="flex items-center gap-2">
-            <span className="text-xl font-bold text-foreground">
-              £{price.toFixed(2)}
-            </span>
-            {comparePrice && (
-              <span className="text-sm text-muted-foreground line-through">
-                £{comparePrice.toFixed(2)}
-              </span>
-            )}
+        
+        <div className="p-6 space-y-4">
+          <div className="space-y-2">
+            <h3 className="font-semibold text-lg text-foreground group-hover:text-sage transition-smooth">
+              {name}
+            </h3>
+            <p className="text-sm text-muted-foreground">{subtitle}</p>
           </div>
           
-          <div className="flex items-center gap-2 text-sm">
-            <span className="text-muted-foreground">or</span>
-            <span className="font-semibold text-primary">
-              £{subscribePrice.toFixed(2)}
+          {/* Rating */}
+          <div className="flex items-center gap-2">
+            <div className="flex items-center">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  className={cn(
+                    "h-4 w-4",
+                    i < Math.floor(rating) 
+                      ? "text-sage fill-current" 
+                      : "text-muted-foreground"
+                  )}
+                />
+              ))}
+            </div>
+            <span className="text-sm text-muted-foreground">
+              {rating} ({reviewCount})
             </span>
-            <span className="text-muted-foreground">with subscription</span>
-            <Badge className="bg-primary/10 text-primary text-xs">
-              -{subscribeDiscount}%
-            </Badge>
+          </div>
+          
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2">
+            {tags.map((tag) => (
+              <Badge key={tag} variant="secondary" className="text-xs bg-sage/10 text-sage border-sage/20">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+          
+          {/* Pricing */}
+          <div className="space-y-3">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl font-bold text-foreground">
+                £{price.toFixed(2)}
+              </span>
+              {comparePrice && (
+                <span className="text-sm text-muted-foreground line-through">
+                  £{comparePrice.toFixed(2)}
+                </span>
+              )}
+            </div>
+            
+            {subscribeDiscount && (
+              <div className="bg-powder-blue/20 text-foreground px-3 py-2 rounded-lg text-sm font-medium border border-powder-blue/30">
+                Subscribe & Save {subscribeDiscount}% → £{subscribePrice.toFixed(2)}
+              </div>
+            )}
           </div>
         </div>
-
-        {/* Add to Cart */}
-        <div className="space-y-2">
-          <Button 
-            className="w-full shadow-neon-pink" 
-            size="lg"
-            onClick={handleAddToCart}
-          >
-            <ShoppingCart className="mr-2 h-4 w-4" />
-            Add to Cart
-          </Button>
-          <Button 
-            variant="outline" 
-            className="w-full border-neon-blue text-neon-blue hover:shadow-neon-blue" 
-            size="sm"
+      </Link>
+      
+      {/* Action Buttons */}
+      <div className="p-6 pt-0 space-y-3">
+        <Button
+          onClick={handleAddToCart}
+          className="w-full"
+          size="lg"
+        >
+          Add to Cart
+        </Button>
+        
+        {subscribeDiscount && (
+          <Button
             onClick={handleSubscribe}
+            variant="subtle"
+            className="w-full"
+            size="lg"
           >
             Subscribe & Save {subscribeDiscount}%
           </Button>
-        </div>
+        )}
       </div>
-    </Link>
+    </div>
   );
 }

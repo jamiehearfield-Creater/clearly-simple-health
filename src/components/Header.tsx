@@ -1,97 +1,119 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Search, ShoppingCart, Menu, X, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { useCart } from '@/contexts/CartContext';
 
 interface HeaderProps {
   className?: string;
 }
 
 export function Header({ className }: HeaderProps) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const navigation = [
-    { name: 'Shop', href: '#' },
-    { name: 'Goals', href: '#' },
-    { name: 'About', href: '#' },
-    { name: 'Support', href: '#' },
-  ];
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const { totalItems } = useCart();
 
   return (
     <header className={cn(
-      "sticky top-0 z-50 w-full border-b border-border/50 backdrop-blur-md",
-      "bg-gradient-to-r from-gray-900/95 to-gray-800/95 shadow-gradient-neon",
+      "sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur-sm",
       className
     )}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center">
-            <a href="/" className="text-hero text-2xl text-neon-cyan">
-              Clearly
-            </a>
-          </div>
+          <Link to="/" className="flex items-center space-x-2">
+            <span className="text-brand text-xl font-bold text-foreground">Clearly</span>
+          </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex md:space-x-8">
-            {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {item.name}
-              </a>
-            ))}
+          <nav className="hidden md:flex items-center space-x-8">
+            <Link 
+              to="/shop" 
+              className="text-foreground hover:text-primary transition-smooth font-medium"
+            >
+              Shop
+            </Link>
+            <Link 
+              to="/about" 
+              className="text-foreground hover:text-primary transition-smooth font-medium"
+            >
+              About
+            </Link>
+            <Link 
+              to="/contact" 
+              className="text-foreground hover:text-primary transition-smooth font-medium"
+            >
+              Contact
+            </Link>
           </nav>
 
-          {/* Search, Account, Cart */}
+          {/* Right side actions */}
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="icon" className="hidden sm:flex">
-              <Search className="h-5 w-5" />
-            </Button>
-            
-            <Button variant="ghost" size="icon">
-              <User className="h-5 w-5" />
-            </Button>
-            
-            <Button variant="ghost" size="icon" className="relative">
-              <ShoppingCart className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-primary text-xs text-primary-foreground flex items-center justify-center">
-                2
-              </span>
-            </Button>
-
-            {/* Mobile menu button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            <Link
+              to="/my-account"
+              className="text-foreground hover:text-primary transition-smooth"
             >
-              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
+              <User className="h-5 w-5" />
+            </Link>
+            <button
+              onClick={() => setIsCartOpen(true)}
+              className="relative text-foreground hover:text-primary transition-smooth"
+            >
+              <ShoppingCart className="h-5 w-5" />
+              {totalItems > 0 && (
+                <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium">
+                  {totalItems}
+                </span>
+              )}
+            </button>
+            
+            {/* Mobile menu button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden text-foreground hover:text-primary transition-smooth"
+            >
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="space-y-1 pb-4 pt-2">
-              {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
+        {isMobileMenuOpen && (
+          <div className="md:hidden border-t border-border py-4">
+            <nav className="flex flex-col space-y-4">
+              <Link 
+                to="/shop" 
+                className="text-foreground hover:text-primary transition-smooth font-medium"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Shop
+              </Link>
+              <Link 
+                to="/about" 
+                className="text-foreground hover:text-primary transition-smooth font-medium"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About
+              </Link>
+              <Link 
+                to="/contact" 
+                className="text-foreground hover:text-primary transition-smooth font-medium"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact
+              </Link>
+              <Link 
+                to="/my-account" 
+                className="text-foreground hover:text-primary transition-smooth font-medium"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                My Account
+              </Link>
+            </nav>
           </div>
         )}
       </div>
-
     </header>
   );
 }
