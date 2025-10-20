@@ -110,47 +110,44 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-hero">
+      {/* Hero Section - Dark with Caramel accent */}
+      <section className="relative overflow-hidden section-dark">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[600px] py-20">
+          <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[700px] py-24">
             {/* Hero Content */}
-            <div className="space-y-8">
+            <div className="space-y-10">
               <div className="space-y-6">
-                <Badge className="bg-sage/20 text-sage border-sage/30 font-medium">
-                  Breaking the stigma
-                </Badge>
-                <h1 className="text-hero text-5xl sm:text-6xl lg:text-7xl text-foreground">
-                  Supplements made{' '}
-                  <span className="text-sage font-bold">simple</span>
+                <h1 className="text-hero text-foreground-dark">
+                  Premium wellness,{' '}
+                  <span className="text-caramel">naturally</span>
                 </h1>
-                <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
-                  For everyday health and wellbeing. Not just for gym-goers. 
-                  Clean, effective supplements that fit into your daily routine.
+                <p className="text-xl text-muted-foreground-dark leading-relaxed max-w-lg">
+                  Functional supplements that blend seamlessly into your daily routine. 
+                  Clean ingredients, bold flavours, real results.
                 </p>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="xl" className="group" asChild>
+                <Button size="xl" variant="caramel" className="group" asChild>
                   <Link to="/shop">
-                    Shop Clearly
+                    Shop Neeü
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-smooth" />
                   </Link>
                 </Button>
-                <Button variant="outline" size="xl" asChild>
+                <Button variant="outline" size="xl" className="border-white/20 text-white hover:bg-white/10" asChild>
                   <Link to="/about">
                     Learn More
                   </Link>
                 </Button>
               </div>
               
-              <div className="flex items-center gap-6 text-sm text-muted-foreground">
+              <div className="flex items-center gap-8 text-sm text-muted-foreground-dark">
                 <div className="flex items-center gap-2">
-                  <Shield className="h-4 w-4 text-sage" />
+                  <Shield className="h-5 w-5 text-caramel" />
                   <span>30-day guarantee</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Truck className="h-4 w-4 text-sage" />
+                  <Truck className="h-5 w-5 text-caramel" />
                   <span>Free UK shipping</span>
                 </div>
               </div>
@@ -160,51 +157,50 @@ const Index = () => {
             <div className="relative">
               <img
                 src={heroLifestyleImg}
-                alt="Clean, minimal supplement lifestyle"
-                className="w-full h-auto rounded-2xl shadow-card"
+                alt="Neeü premium supplements"
+                className="w-full h-auto rounded-lg shadow-dark"
               />
             </div>
           </div>
         </div>
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-section-transition"></div>
       </section>
 
-      {/* Why Clearly Section */}
-      <section className="py-20 bg-card/50">
+      {/* Why Neeü Section - Light */}
+      <section className="py-24 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl font-bold text-foreground">
-              Why Clearly?
+          <div className="text-center space-y-4 mb-20">
+            <h2 className="text-foreground">
+              Why Neeü?
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               We believe wellness should be simple, accessible, and designed for real life
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {whyClearlyFeatures.map((feature, index) => (
-              <Card key={index} className="border-border/50 bg-background/80 shadow-soft">
-                <CardContent className="p-8 text-center space-y-4">
-                  <div className="mx-auto w-16 h-16 bg-sage/10 rounded-full flex items-center justify-center">
-                    <feature.icon className="h-8 w-8 text-sage" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-foreground">{feature.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
-                </CardContent>
-              </Card>
+              <div key={index} className="text-center space-y-6">
+                <div className="mx-auto w-20 h-20 bg-neutral-warm rounded-full flex items-center justify-center">
+                  <feature.icon className="h-10 w-10 text-caramel" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground">{feature.title}</h3>
+                <p className="text-muted-foreground leading-relaxed text-[15px]">{feature.description}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Products */}
-      <section className="py-20">
+      {/* Featured Products - Dark */}
+      <section className="py-24 section-dark relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-4xl font-bold text-foreground">
-              Start your wellness journey
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-foreground-dark">
+              Explore the range
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Our most popular supplements, trusted by thousands of everyday people
+            <p className="text-xl text-muted-foreground-dark max-w-2xl mx-auto">
+              Functional supplements designed for modern living
             </p>
           </div>
           
@@ -214,8 +210,8 @@ const Index = () => {
             ))}
           </div>
           
-          <div className="text-center mt-12">
-            <Button size="lg" variant="outline" asChild>
+          <div className="text-center mt-16">
+            <Button size="lg" variant="neutral" asChild>
               <Link to="/shop">
                 Shop All Products
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -223,72 +219,71 @@ const Index = () => {
             </Button>
           </div>
         </div>
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-section-transition rotate-180"></div>
       </section>
 
-      {/* Trust Features */}
-      <section className="py-20 bg-card/30">
+      {/* Trust Features - Light */}
+      <section className="py-24 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl font-bold text-foreground">
-              Why customers trust Clearly
+          <div className="text-center space-y-4 mb-20">
+            <h2 className="text-foreground">
+              Why customers trust Neeü
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
             {trustFeatures.map((feature, index) => (
-              <div key={index} className="text-center space-y-4">
-                <div className="mx-auto w-14 h-14 bg-powder-blue/20 rounded-full flex items-center justify-center">
-                  <feature.icon className="h-7 w-7 text-powder-blue" />
+              <div key={index} className="text-center space-y-5">
+                <div className="mx-auto w-16 h-16 bg-matcha/10 rounded-full flex items-center justify-center">
+                  <feature.icon className="h-8 w-8 text-matcha" />
                 </div>
-                <h3 className="font-semibold text-foreground">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">{feature.description}</p>
+                <h3 className="font-bold text-foreground text-lg">{feature.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Email Capture */}
-      <section className="py-16">
+      {/* Email Capture - Dark accent section */}
+      <section className="py-20 bg-hazelnut">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <Card className="bg-gradient-subtle border-0 shadow-lg">
-            <CardContent className="p-12 text-center space-y-6">
-              <h2 className="text-3xl font-bold text-foreground">
-                Get 10% off your first order
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Join our wellness community and receive exclusive offers, health tips, and early access to new products.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-sage focus:border-transparent"
-                />
-                <Button size="lg" className="whitespace-nowrap">
-                  Get 10% Off
-                </Button>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                No spam, unsubscribe anytime. See our privacy policy.
-              </p>
-            </CardContent>
-          </Card>
+          <div className="text-center space-y-8">
+            <h2 className="text-foreground-dark">
+              Get 10% off your first order
+            </h2>
+            <p className="text-lg text-white/90 max-w-2xl mx-auto">
+              Join our wellness community and receive exclusive offers, health tips, and early access to new products.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-6 py-4 rounded-lg border-2 border-white/20 bg-white/10 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent backdrop-blur-sm"
+              />
+              <Button size="lg" variant="neutral" className="whitespace-nowrap">
+                Get 10% Off
+              </Button>
+            </div>
+            <p className="text-sm text-white/70">
+              No spam, unsubscribe anytime. See our privacy policy.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Mission Section */}
-      <section className="py-20 bg-card/50">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center space-y-8">
-          <h2 className="text-4xl font-bold text-foreground">
+      {/* Mission Section - Light */}
+      <section className="py-28 bg-background">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center space-y-10">
+          <h2 className="text-foreground">
             Our mission
           </h2>
-          <p className="text-xl text-muted-foreground leading-relaxed">
+          <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
             We believe supplements shouldn't be intimidating or exclusive. 
             They should be simple, accessible, and designed for everyone who wants to feel healthier. 
             That's why we create clean, effective products that fit seamlessly into your everyday routine.
           </p>
-          <Button size="lg" variant="outline" asChild>
+          <Button size="lg" variant="outline" className="border-2" asChild>
             <Link to="/about">
               Read Our Story
             </Link>
@@ -296,56 +291,56 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-card border-t border-border py-16">
+      {/* Footer - Dark */}
+      <footer className="section-dark border-t border-border-dark py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             <div className="space-y-4">
-              <h3 className="text-brand text-xl font-bold text-foreground">Clearly</h3>
-              <p className="text-sm text-muted-foreground">
-                Supplements made simple, for everyday health and wellbeing.
+              <h3 className="text-brand text-2xl font-bold text-foreground-dark">Neeü</h3>
+              <p className="text-sm text-muted-foreground-dark leading-relaxed">
+                Premium functional supplements for modern living.
               </p>
             </div>
             
             <div className="space-y-4">
-              <h4 className="font-semibold text-foreground">Shop</h4>
-              <div className="space-y-2 text-sm text-muted-foreground">
-                <div><Link to="/shop" className="hover:text-foreground transition-smooth">All Products</Link></div>
-                <div><a href="#" className="hover:text-foreground transition-smooth">By Goal</a></div>
-                <div><a href="#" className="hover:text-foreground transition-smooth">Bundles</a></div>
-                <div><a href="#" className="hover:text-foreground transition-smooth">Subscriptions</a></div>
+              <h4 className="font-semibold text-foreground-dark">Shop</h4>
+              <div className="space-y-3 text-sm text-muted-foreground-dark">
+                <div><Link to="/shop" className="hover:text-caramel transition-smooth">All Products</Link></div>
+                <div><a href="#" className="hover:text-caramel transition-smooth">By Goal</a></div>
+                <div><a href="#" className="hover:text-caramel transition-smooth">Bundles</a></div>
+                <div><a href="#" className="hover:text-caramel transition-smooth">Subscriptions</a></div>
               </div>
             </div>
             
             <div className="space-y-4">
-              <h4 className="font-semibold text-foreground">Support</h4>
-              <div className="space-y-2 text-sm text-muted-foreground">
-                <div><Link to="/contact" className="hover:text-foreground transition-smooth">Contact Us</Link></div>
-                <div><a href="#" className="hover:text-foreground transition-smooth">Shipping</a></div>
-                <div><a href="#" className="hover:text-foreground transition-smooth">Returns</a></div>
-                <div><a href="#" className="hover:text-foreground transition-smooth">FAQ</a></div>
+              <h4 className="font-semibold text-foreground-dark">Support</h4>
+              <div className="space-y-3 text-sm text-muted-foreground-dark">
+                <div><Link to="/contact" className="hover:text-caramel transition-smooth">Contact Us</Link></div>
+                <div><a href="#" className="hover:text-caramel transition-smooth">Shipping</a></div>
+                <div><a href="#" className="hover:text-caramel transition-smooth">Returns</a></div>
+                <div><a href="#" className="hover:text-caramel transition-smooth">FAQ</a></div>
               </div>
             </div>
             
             <div className="space-y-4">
-              <h4 className="font-semibold text-foreground">Legal</h4>
-              <div className="space-y-2 text-sm text-muted-foreground">
-                <div><a href="#" className="hover:text-foreground transition-smooth">Privacy Policy</a></div>
-                <div><a href="#" className="hover:text-foreground transition-smooth">Terms & Conditions</a></div>
-                <div><a href="#" className="hover:text-foreground transition-smooth">Cookie Policy</a></div>
+              <h4 className="font-semibold text-foreground-dark">Legal</h4>
+              <div className="space-y-3 text-sm text-muted-foreground-dark">
+                <div><a href="#" className="hover:text-caramel transition-smooth">Privacy Policy</a></div>
+                <div><a href="#" className="hover:text-caramel transition-smooth">Terms & Conditions</a></div>
+                <div><a href="#" className="hover:text-caramel transition-smooth">Cookie Policy</a></div>
               </div>
             </div>
           </div>
           
-          <div className="border-t border-border mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground space-y-4 sm:space-y-0">
-            <p>&copy; 2024 Clearly Ltd. All rights reserved. VAT No: GB123456789</p>
-            <div className="flex items-center gap-4">
+          <div className="border-t border-border-dark mt-16 pt-10 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground-dark space-y-4 sm:space-y-0">
+            <p>&copy; 2024 Neeü Ltd. All rights reserved. VAT No: GB123456789</p>
+            <div className="flex items-center gap-6">
               <div className="flex items-center gap-2">
-                <Shield className="h-4 w-4 text-sage" />
+                <Shield className="h-4 w-4 text-caramel" />
                 <span>30-day guarantee</span>
               </div>
               <div className="flex items-center gap-2">
-                <Star className="h-4 w-4 text-sage fill-current" />
+                <Star className="h-4 w-4 text-caramel fill-current" />
                 <span>4.8/5 rating</span>
               </div>
             </div>

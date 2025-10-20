@@ -2,76 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Warm Personal Design System - Soft pastels & inviting */
+/* Neeü Design System - Premium, Modern, Product-Focused */
 
 @layer base {
   :root {
-    /* Warm Personal Light Theme */
-    --background: 320 50% 98%;           /* Soft blush white #FAF9FB */
-    --foreground: 220 8% 11%;            /* Primary text #1A1C1E */
+    /* Base Backgrounds */
+    --background: 40 17% 98%;            /* Soft off-white #F9F9F9 */
+    --background-dark: 0 0% 7%;          /* Deep charcoal #111111 */
+    --foreground: 0 0% 5%;               /* Primary text on light #0D0D0D */
+    --foreground-dark: 0 0% 100%;        /* White text on dark #FFFFFF */
     
-    --card: 210 43% 96%;                 /* Pale pastel blue #F2F6FA */
-    --card-foreground: 220 8% 11%;
+    /* Surfaces */
+    --card: 220 14% 96%;                 /* Light surface #F3F4F6 */
+    --card-dark: 0 0% 10%;               /* Dark surface variant */
+    --card-foreground: 0 0% 5%;
     
-    --popover: 210 43% 96%;
-    --popover-foreground: 220 8% 11%;
+    --popover: 220 14% 96%;
+    --popover-foreground: 0 0% 5%;
     
-    --primary: 320 67% 91%;              /* Pastel pink #F8D7E8 */
-    --primary-foreground: 220 8% 11%;
+    /* Product Accent Colors */
+    --caramel: 27 56% 49%;               /* Caramel brown #C67235 */
+    --matcha: 104 24% 45%;               /* Matcha green #678D58 */
+    --hazelnut: 27 38% 44%;              /* Hazelnut brown #9E6A43 */
+    --neutral-warm: 36 19% 88%;          /* Warm neutral #E2DFDA */
     
-    --secondary: 210 43% 96%;            /* Card surface */
-    --secondary-foreground: 220 8% 37%;  /* Secondary text #5B6067 */
+    /* Primary (default to caramel) */
+    --primary: 27 56% 49%;
+    --primary-foreground: 0 0% 100%;
     
-    --muted: 220 15% 93%;
-    --muted-foreground: 220 8% 37%;      /* Secondary text #5B6067 */
+    /* Secondary Text */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 0 0% 31%;    /* #4E4E4E on light */
+    --secondary-foreground-dark: 0 0% 78%; /* #C7C7C7 on dark */
     
-    --accent: 210 67% 91%;               /* Pastel baby blue #D6E8F8 */
-    --accent-foreground: 220 8% 11%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 0 0% 31%;
+    --muted-foreground-dark: 0 0% 78%;
     
-    --destructive: 0 84% 60%;            /* Error red */
+    --accent: 104 24% 45%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 220 20% 92%;               /* Borders/hairlines #E9ECF1 */
-    --input: 0 0% 100%;                  /* White input backgrounds */
-    --ring: 320 67% 91%;
+    /* Borders */
+    --border: 210 17% 93%;               /* #E5E7EB */
+    --border-dark: 0 0% 20%;
+    --input: 0 0% 100%;
+    --ring: 27 56% 49%;
     
-    --radius: 8px;
+    --radius: 10px;
     
-    /* Pastel Personal Colors */
-    --pastel-pink: 320 67% 91%;          /* Pastel pink #F8D7E8 */
-    --pastel-blue: 210 67% 91%;          /* Pastel baby blue #D6E8F8 */
-    --lavender: 260 43% 93%;             /* Lavender hint #EADFF6 */
-    --success: 142 76% 36%;              /* Success green */
-    
-    /* Warm Personal Gradients */
+    /* Gradients */
     --gradient-hero: linear-gradient(135deg, 
-      hsl(var(--pastel-pink)), 
-      hsl(var(--pastel-blue))
+      hsl(var(--caramel)) 0%, 
+      hsl(var(--hazelnut)) 100%
     );
-    --gradient-card: linear-gradient(145deg, 
-      hsl(var(--card)), 
-      hsl(var(--background))
-    );
-    --gradient-subtle: linear-gradient(90deg,
-      hsl(var(--pastel-pink)),
-      hsl(var(--pastel-blue))
-    );
-    --gradient-primary: linear-gradient(135deg, 
-      hsl(var(--pastel-pink)), 
-      hsl(var(--pastel-blue))
+    --gradient-section-transition: linear-gradient(180deg, 
+      rgba(0,0,0,0) 0%, 
+      rgba(0,0,0,0.05) 100%
     );
     
-    /* Gentle Personal Shadow Effects */
-    --shadow-soft: 0 2px 4px 0 hsl(320 67% 91% / 0.3), 0 1px 3px 0 hsl(210 67% 91% / 0.2);
-    --shadow-card: 0 4px 8px -2px hsl(320 67% 91% / 0.25), 0 2px 6px -1px hsl(210 67% 91% / 0.15);
-    --shadow-lg: 0 8px 16px -4px hsl(320 67% 91% / 0.2), 0 4px 12px -2px hsl(210 67% 91% / 0.1);
-    --shadow-hover: 0 6px 12px -2px hsl(320 67% 91% / 0.3), 0 3px 8px -1px hsl(210 67% 91% / 0.2);
-    
-    /* Clean Text Effects */
-    --text-shadow-subtle: 0 1px 2px hsl(220 13% 8% / 0.1);
+    /* Modern Shadow Effects */
+    --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.15);
+    --shadow-dark: 0 4px 12px rgba(255, 255, 255, 0.1);
     
     /* Smooth Animations */
-    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s ease;
     --transition-gentle: all 0.3s ease-out;
     
     /* Sidebar */
@@ -85,27 +85,18 @@
     --sidebar-ring: 142 25% 76%;
   }
 
-  .dark {
-    /* Keep light theme as default - no dark mode needed for clean aesthetic */
-    --background: 48 33% 97%;
-    --foreground: 220 13% 8%;
-    --card: 220 13% 96%;
-    --card-foreground: 220 13% 8%;
-    --popover: 220 13% 96%;
-    --popover-foreground: 220 13% 8%;
-    --primary: 142 25% 76%;
-    --primary-foreground: 220 13% 8%;
-    --secondary: 220 13% 96%;
-    --secondary-foreground: 220 9% 34%;
-    --muted: 220 13% 91%;
-    --muted-foreground: 220 9% 34%;
-    --accent: 210 40% 89%;
-    --accent-foreground: 220 13% 8%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 220 13% 91%;
-    --input: 0 0% 100%;
-    --ring: 142 25% 76%;
+  /* Dark section utility classes */
+  .section-dark {
+    background-color: hsl(var(--background-dark));
+    color: hsl(var(--foreground-dark));
+  }
+  
+  .section-dark .text-muted-foreground {
+    color: hsl(var(--muted-foreground-dark));
+  }
+  
+  .section-dark .text-secondary-foreground {
+    color: hsl(var(--secondary-foreground-dark));
   }
 }
 
@@ -117,25 +108,35 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', sans-serif;
+    letter-spacing: 0.01em;
   }
   
-  /* Clean Premium Typography */
+  /* Modern Premium Typography */
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Space Grotesk', sans-serif;
-    @apply font-semibold tracking-tight text-foreground;
+    @apply font-bold tracking-tight;
+    letter-spacing: -0.02em;
+  }
+  
+  h1 {
+    @apply text-5xl md:text-6xl lg:text-7xl;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
   }
   
   .text-hero {
     font-family: 'Space Grotesk', sans-serif;
-    @apply font-bold tracking-tight text-foreground;
+    @apply font-bold tracking-tight;
   }
   
   .text-brand {
     font-family: 'Space Grotesk', sans-serif;
-    @apply font-bold text-foreground;
-  }
-  
-  .text-subtle {
-    text-shadow: var(--text-shadow-subtle);
+    @apply font-bold;
   }
 }

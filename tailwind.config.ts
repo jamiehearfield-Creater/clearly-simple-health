@@ -57,11 +57,15 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Warm Personal Colors
-        "pastel-pink": "hsl(var(--pastel-pink))",
-        "pastel-blue": "hsl(var(--pastel-blue))",
-        "lavender": "hsl(var(--lavender))",
-        "success": "hsl(var(--success))",
+        // Neeü Product Accent Colors
+        "caramel": "hsl(var(--caramel))",
+        "matcha": "hsl(var(--matcha))",
+        "hazelnut": "hsl(var(--hazelnut))",
+        "neutral-warm": "hsl(var(--neutral-warm))",
+        "background-dark": "hsl(var(--background-dark))",
+        "foreground-dark": "hsl(var(--foreground-dark))",
+        "card-dark": "hsl(var(--card-dark))",
+        "border-dark": "hsl(var(--border-dark))",
       },
       fontFamily: {
         'space-grotesk': ['Space Grotesk', 'sans-serif'],
@@ -69,18 +73,14 @@ export default {
       },
       backgroundImage: {
         'gradient-hero': 'var(--gradient-hero)',
-        'gradient-card': 'var(--gradient-card)',
-        'gradient-primary': 'var(--gradient-primary)',
-        'gradient-subtle': 'var(--gradient-subtle)',
+        'gradient-section-transition': 'var(--gradient-section-transition)',
       },
       boxShadow: {
         'soft': 'var(--shadow-soft)',
         'card': 'var(--shadow-card)',
         'lg': 'var(--shadow-lg)',
         'hover': 'var(--shadow-hover)',
-      },
-      textShadow: {
-        'subtle': 'var(--text-shadow-subtle)',
+        'dark': 'var(--shadow-dark)',
       },
       transitionTimingFunction: {
         'smooth': 'var(--transition-smooth)',

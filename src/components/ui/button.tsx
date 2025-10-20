@@ -5,31 +5,29 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-semibold transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-gradient-primary text-foreground shadow-soft hover:shadow-hover hover:-translate-y-0.5 font-semibold rounded-xl",
-        destructive:
-          "bg-destructive text-destructive-foreground shadow-soft hover:bg-destructive/90 rounded-xl",
-        outline:
-          "border border-border bg-background shadow-soft hover:bg-secondary hover:text-secondary-foreground rounded-xl",
-        secondary:
-          "bg-secondary text-secondary-foreground shadow-soft hover:bg-secondary/80 rounded-xl",
-        ghost: "hover:bg-secondary hover:text-secondary-foreground rounded-xl",
-        link: "text-primary underline-offset-4 hover:underline font-medium",
+        default: "bg-caramel text-white hover:bg-caramel/90 hover:shadow-hover hover:scale-[1.02]",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        outline: "border-2 border-border bg-transparent hover:bg-card hover:border-foreground/20",
+        secondary: "bg-card text-foreground hover:bg-card/80",
+        ghost: "hover:bg-card/50",
+        link: "text-caramel underline-offset-4 hover:underline font-medium",
         
-        // Warm Personal Variants
-        subtle: "bg-pastel-pink/30 text-foreground hover:bg-pastel-pink/40 hover:-translate-y-0.5 transition-all duration-300 rounded-xl",
-        accent: "bg-pastel-blue/40 text-foreground hover:bg-pastel-blue/50 hover:-translate-y-0.5 transition-all duration-300 rounded-xl",
-        minimal: "text-foreground hover:bg-secondary border border-transparent hover:border-border transition-all duration-300 rounded-xl",
+        // Product-specific variants
+        caramel: "bg-caramel text-white hover:bg-caramel/90 hover:shadow-hover hover:scale-[1.02]",
+        matcha: "bg-matcha text-white hover:bg-matcha/90 hover:shadow-hover hover:scale-[1.02]",
+        hazelnut: "bg-hazelnut text-white hover:bg-hazelnut/90 hover:shadow-hover hover:scale-[1.02]",
+        neutral: "bg-neutral-warm text-foreground hover:bg-neutral-warm/80 hover:shadow-hover hover:scale-[1.02]",
       },
       size: {
-        default: "h-10 px-6 py-2",
-        sm: "h-8 rounded-md px-4 text-sm",
-        lg: "h-12 rounded-lg px-8 text-base",
-        xl: "h-14 rounded-lg px-10 text-lg font-semibold",
-        icon: "h-10 w-10",
+        default: "h-11 px-6 py-2.5",
+        sm: "h-9 px-4 text-sm",
+        lg: "h-12 px-8 text-base",
+        xl: "h-14 px-10 text-lg",
+        icon: "h-11 w-11",
       },
     },
     defaultVariants: {

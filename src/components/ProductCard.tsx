@@ -71,16 +71,16 @@ export function ProductCard({
   };
   
   return (
-    <div className="bg-background rounded-xl border border-border overflow-hidden shadow-soft hover:shadow-card transition-gentle group">
+    <div className="bg-card rounded-lg border border-border overflow-hidden shadow-soft hover:shadow-hover transition-smooth group">
       <Link to={`/product/${id}`} className="block">
-        <div className="relative aspect-square overflow-hidden">
+        <div className="relative aspect-square overflow-hidden bg-neutral-warm">
           <img
             src={image}
             alt={name}
-            className="w-full h-full object-cover group-hover:scale-105 transition-gentle"
+            className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
           />
           {lowStock && (
-            <Badge className="absolute top-3 left-3 bg-destructive text-destructive-foreground">
+            <Badge className="absolute top-4 left-4 bg-destructive text-white font-semibold">
               Low Stock
             </Badge>
           )}
@@ -88,7 +88,7 @@ export function ProductCard({
         
         <div className="p-6 space-y-4">
           <div className="space-y-2">
-            <h3 className="font-semibold text-lg text-foreground group-hover:text-sage transition-smooth">
+            <h3 className="font-bold text-xl text-foreground group-hover:text-caramel transition-smooth">
               {name}
             </h3>
             <p className="text-sm text-muted-foreground">{subtitle}</p>
@@ -103,13 +103,13 @@ export function ProductCard({
                   className={cn(
                     "h-4 w-4",
                     i < Math.floor(rating) 
-                      ? "text-sage fill-current" 
-                      : "text-muted-foreground"
+                      ? "text-caramel fill-current" 
+                      : "text-border"
                   )}
                 />
               ))}
             </div>
-            <span className="text-sm text-muted-foreground">
+            <span className="text-sm text-muted-foreground font-medium">
               {rating} ({reviewCount})
             </span>
           </div>
@@ -117,7 +117,7 @@ export function ProductCard({
           {/* Tags */}
           <div className="flex flex-wrap gap-2">
             {tags.map((tag) => (
-              <Badge key={tag} variant="secondary" className="text-xs bg-sage/10 text-sage border-sage/20">
+              <Badge key={tag} variant="secondary" className="text-xs bg-neutral-warm text-foreground border-border font-medium">
                 {tag}
               </Badge>
             ))}
@@ -126,7 +126,7 @@ export function ProductCard({
           {/* Pricing */}
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <span className="text-2xl font-bold text-foreground">
+              <span className="text-3xl font-bold text-foreground">
                 £{price.toFixed(2)}
               </span>
               {comparePrice && (
@@ -137,7 +137,7 @@ export function ProductCard({
             </div>
             
             {subscribeDiscount && (
-              <div className="bg-powder-blue/20 text-foreground px-3 py-2 rounded-lg text-sm font-medium border border-powder-blue/30">
+              <div className="bg-matcha/10 text-foreground px-4 py-2.5 rounded-lg text-sm font-semibold border border-matcha/20">
                 Subscribe & Save {subscribeDiscount}% → £{subscribePrice.toFixed(2)}
               </div>
             )}
@@ -151,6 +151,7 @@ export function ProductCard({
           onClick={handleAddToCart}
           className="w-full"
           size="lg"
+          variant="caramel"
         >
           Add to Cart
         </Button>
@@ -158,7 +159,7 @@ export function ProductCard({
         {subscribeDiscount && (
           <Button
             onClick={handleSubscribe}
-            variant="subtle"
+            variant="matcha"
             className="w-full"
             size="lg"
           >
